@@ -15,7 +15,7 @@
                 <div class="col-md-12 col-sm-12 col-xs-12">
                     <div class="x_panel">
                         <div class="x_title">
-                            <h2>จัดการข้อมูล Pillar</h2>
+                            <h2>จัดการข้อมูล ตำแหน่ง</h2>
 
                             <div class="clearfix"></div>
                         </div>
@@ -24,31 +24,13 @@
 
                             <?php echo form_open('position/insert'); ?>
                             <table class="table table-bordered table-hover" id="dataTables-example">    
-                                <tbody>
+                                <tbody>                                                                     
                                     <tr class="odd gradeA">
                                         <td align="center">
-                                            ชื่อ Pillar
+                                            ตำแหน่ง
                                         </td>
                                         <td>
-                                            <input class="form-control" type="text" placeholder="ชื่อ Pillar" name="name_pillar">
-                                        </td>                                                            
-
-                                    </tr>
-                                    <tr class="odd gradeA">
-                                        <td align="center">
-                                            ชื่อแผนก
-                                        </td>
-                                        <td>
-                                            <input class="form-control" type="text" placeholder="ชื่อแผนก" name="department">
-                                        </td>                                            
-
-                                    </tr>
-                                    <tr class="odd gradeA">
-                                        <td align="center">
-                                            Position
-                                        </td>
-                                        <td>
-                                            <input class="form-control" type="text" placeholder="Position" name="position">
+                                            <input class="form-control" type="text" placeholder="ชื่อตำแหน่ง" name="position">
                                         </td>                                            
 
                                     </tr>
@@ -71,48 +53,36 @@
             <table class="table table-bordered table-hover" id="dataTables-example">    
                 <tbody><tr>
                         <td colspan="8" align="center" bgcolor="#f5f5f5" colspan="5">
-                            <b> <i class="fa fa-sitemap fa-fw" id="font-field-wait"></i> แสดงข้อมูล Pillar ทั้งหมด </b>
+                            <b> <i class="fa fa-sitemap fa-fw" id="font-field-wait"></i> แสดงข้อมูล ตำแหน่ง ทั้งหมด </b>
                         </td>
                     </tr>
                     <tr class="odd gradeA">
                         <td align="center">
                             ลำดับที่
-                        </td>
+                        </td>                        
                         <td align="center">
-                            Pillar 
-                        </td>                                                            
-                        <td align="center">
-                            แผนก                                                               
-                        </td>
-                        <td align="center">
-                            Position                                                               
+                            ตำแหน่ง                                                               
                         </td>
                         <td align="center" colspan="3">
                             จัดการ                                                               
                         </td>
                     </tr>
-                    <?php // foreach ($pillar as $key => $value) { ?>
+                    <?php foreach ($position as $key => $value) { ?>
                         <tr class="odd gradeA">
                             <td align="center">
-                                
-                            </td>
+                                <?php echo $key + 1; ?>
+                            </td>                            
                             <td>
-                                                                   
-                            </td> 
-                            <td>
-                                                                 
-                            </td>
-                            <td>
-                                                                 
+                                <?php echo $value['position_name']; ?>                               
                             </td>
                             <td align='center'>
-                                <a href="<?php // echo site_url('pillar/update/' . $value['pillar_id']); ?>"><i class="fa fa-pencil-square-o fa-1x" id="font-field"></i></a>
+                                <a href="<?php  echo site_url('position/update/' . $value['position_id']); ?>"><i class="fa fa-pencil-square-o fa-1x" id="font-field"></i></a>
                             </td>
                             <td align='center'>
-                                <a href="<?php // echo site_url('pillar/delete/' . $value['pillar_id']); ?>" onclick="JavaScript:return(confirm('คุณต้องการลบ--<?php // echo $value['pillar_name']." "."และ"." ".$value['initial'] ?>--จริงหรือไม่'));"><i class="fa fa-trash-o fa-1x" id="font-field"></i> </a> 
+                                <a href="<?php  echo site_url('position/delete/' . $value['position_id']); ?>" onclick="JavaScript:return(confirm('คุณต้องการลบ--<?php  echo $value['position_name'] ?>--จริงหรือไม่'));"><i class="fa fa-trash-o fa-1x" id="font-field"></i> </a> 
                             </td>
                         </tr>
-                    <?php // } ?>
+                    <?php } ?>
 
                 </tbody></table>
 

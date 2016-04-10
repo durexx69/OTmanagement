@@ -15,7 +15,7 @@
                 <div class="col-md-12 col-sm-12 col-xs-12">
                     <div class="x_panel">
                         <div class="x_title">
-                            <h2>จัดการข้อมูล Pillar</h2>
+                            <h2>จัดการข้อมูล แผนก</h2>
 
                             <div class="clearfix"></div>
                         </div>
@@ -67,23 +67,23 @@
                             จัดการ                                                               
                         </td>
                     </tr>
-                    <?php // foreach ($department as $key => $value) { ?>
+                    <?php foreach ($department as $key => $value) { ?>
                         <tr class="odd gradeA">
                             <td align="center">
-                                <?php // echo $key + 1; ?>
+                                <?php echo $key + 1; ?>
                             </td>
                              
                             <td>
-                                <?php // echo $value['dep_name']; ?>                                   
+                                <?php echo $value['dep_name']; ?>                                   
                             </td>
                             <td align='center'>
-                                <a href="<?php // echo site_url('department/update/' . $value['dep_id']); ?>"><i class="fa fa-pencil-square-o fa-1x" id="font-field"></i></a>
+                                <a href="<?php echo site_url('department/update/' . $value['dep_id']); ?>"><i class="fa fa-pencil-square-o fa-1x" id="font-field"></i></a>
                             </td>
                             <td align='center'>
-                                <a href="<?php // echo site_url('department/delete/' . $value['dep_id']); ?>" onclick="JavaScript:return(confirm('คุณต้องการลบ--<?php // echo $value['pillar_name'] ." และ ". $value['dep_name'] ?>--จริงหรือไม่'));"><i class="fa fa-trash-o fa-1x" id="font-field"></i> </a> 
+                                <a href="<?php echo site_url('department/delete/' . $value['dep_id']); ?>" onclick="JavaScript:return(confirm('คุณต้องการลบ--<?php echo $value['dep_name'] ?>--จริงหรือไม่'));"><i class="fa fa-trash-o fa-1x" id="font-field"></i> </a> 
                             </td>
                         </tr>
-                    <?php // } ?>
+                    <?php } ?>
 
                 </tbody></table>
 

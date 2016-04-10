@@ -16,13 +16,13 @@
             </div>
             <div class="x_content">
                 <br />
-                <?php echo form_open('managedata_overtime/insert/' . $overtime) ?>
+                <?php echo form_open('managedata_overtime/insert/') ?>
 
                 <table class="table table-bordered table-hover" id="dataTables-example"> 
                     <tbody>
                     <tr>
                         <td align="left">
-                            <input type="hidden" name="overtime_id" value="<?php echo $overtime ?>"/>
+                            <input type="hidden" name="overtime_id" value="<?php // echo $overtime ?>"/>
                             ว/ด/ป ที่เริ่มทำ   
                             <input type="date" class="form-control" id="request_date" name="request_date" value="<?php echo date('Y-m-d'); ?>" required="" autofocus="">
                         </td>
@@ -35,27 +35,7 @@
                             ว/ด/ป ที่สิ้นสุดการทำ
                             <input type="date" class="form-control" id="end_date" name="end_date" value="<?php echo date('Y-m-d'); ?>" autofocus="" disabled="disabled">                                                                               
                         </td>
-                    </tr>
-                    <tr class="odd gradeA">
-                        <td align="left">
-                            ประเภท OT   
-                            <select type="text" class="form-control" id="request_time" name="type" required="" autofocus="">
-                                <option value=""> กรุณาเลือก ประเภท OT </option>
-                                <?php foreach ($type as $value) { ?>
-                                    <option value="<?php echo $value['type_id'] ?>"> <?php echo $value['overtime_name'] ?>  </option>
-                                <?php } ?>
-                            </select>
-                        </td>                                
-                        <td align="left" colspan="2"> 
-                            ค่าเบี้ยเลี้ยงเฉพาะหน่วยงาน
-                            <select type="text" class="form-control" id="request_time" name="allowance" autofocus="">
-                                <option value=""> กรุณาเลือก ค่าเบี้ยเลี้ยงเฉพาะหน่วยงาน </option>
-                                <?php foreach ($allow as $value) { ?>
-                                    <option value="<?php echo $value['allow_id'] ?>"> <?php echo $value['type_allowance'] ?>  </option>
-                                <?php } ?>
-                            </select>                                
-                        </td> 
-                    </tr>
+                    </tr>                    
                     <tr>
                         <td>
                             เวลาเข้า
@@ -186,30 +166,30 @@
                                     </thead>
                                     <tbody>                        
                                         <tr class="odd pointer">
-                                            <?php foreach ($ot as $key => $value) { ?>
+                                            <?php // foreach ($ot as $key => $value) { ?>
                                                 <td class="a-center ">
                                                     <input type="checkbox" class="flat" name="table_records">
                                                 </td>
                                                 <td class="a-center ">
-                                                    <?php echo $key + 1; ?>
+                                                    <?php // echo $key + 1; ?>
                                                 </td>
                                                 <td align="center">
 
                                                 </td>
                                                 <td align="center">
-                                                    <?php echo $value['start_date'] ?>
+                                                    <?php // echo $value['start_date'] ?>
                                                 </td>
                                                 <td align="center">
-                                                    <?php echo $value['end_date'] ?>
+                                                    <?php // echo $value['end_date'] ?>
                                                 </td>
                                                 <td align="center">
-                                                    <?php echo $value['start_time'] ?>
+                                                    <?php // echo $value['start_time'] ?>
                                                 </td>
                                                 <td align="center">
-                                                    <?php echo $value['end_time'] ?>
+                                                    <?php // echo $value['end_time'] ?>
                                                 </td>
                                                 <td >
-                                                    <?php echo $value['work'] . "/" . " " . $value['location_work'] ?>
+                                                    <?php // echo $value['work'] . "/" . " " . $value['location_work'] ?>
                                                 </td>
                                                 <td align="center">
 
@@ -221,7 +201,7 @@
 
                                                 </td>
                                                 <td align="center">
-                                                    <?php echo $value['type_allowance'] ?>
+                                                    <?php // echo $value['type_allowance'] ?>
                                                 </td>
                                                 <td align='center'>
                                                     <a href="<?php // echo site_url('managedata_overtime/update/' . $value['issue_id']); ?>"><i class="fa fa-pencil-square-o fa-1x" id="font-field"></i></a>
@@ -229,7 +209,7 @@
                                                 </td>
 
                                             </tr>
-                                        <?php } ?>
+                                        <?php // } ?>
 
                                         <tr class="odd pointer">
 
@@ -370,18 +350,3 @@
         </div>
     </div>
 </div>
-
-<script>
-    $(function () {
-        $("#checkbox").click(function () {
-            if ($(this).is(":checked")) {
-                $("#end_date").removeAttr("disabled");
-                $("#end_date").focus();
-            } else {
-                $("#end_date").attr("disabled", "disabled");
-            }
-        });
-    });
-
-
-</script>

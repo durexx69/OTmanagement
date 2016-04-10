@@ -20,7 +20,7 @@
                             <div class="clearfix"></div>
                         </div>
                         <div class="x_content">
-                            <br />
+                            <br/>
 
                             <?php echo form_open('employee/insert'); ?>
                             <table class="table table-bordered table-hover" id="dataTables-example">    
@@ -30,38 +30,49 @@
                                             รหัสพนักงาน <text font="" style="color:#FF0000">*</text>
                                             <input class="form-control" placeholder="กรอกรหัสพนักงาน" name="emp_code" type="text" required="" autofocus="">  
                                         </td>
-                                        
+
                                         <td align="left">
                                             ชื่อ <text font="" style="color:#FF0000">*</text>
-                                            <input class="form-control" placeholder="กรอกชื่อภาษาไทย" name="fname_th" type="text" required="" autofocus="">
+                                            <input class="form-control" placeholder="กรอกชื่อภาษาไทย" name="emp_fname" type="text" required="" autofocus="">
                                         </td>
                                         <td align="left">
                                             นามสกุล <text font="" style="color:#FF0000">*</text>
-                                            <input class="form-control" placeholder="กรอกนามสกุลภาษาไทย" name="lname_th" type="text" required="" autofocus="">
+                                            <input class="form-control" placeholder="กรอกนามสกุลภาษาไทย" name="emp_lname" type="text" required="" autofocus="">
                                         </td>
                                     </tr>
                                     <tr class="odd gradeA">                                        
- 
+
                                     </tr>    
                                     <tr class="odd gradeA">                                                                                
-
+                                        <td align="left">
+                                            ชื่อเล่น<text font="" style="color:#FF0000">*</text>
+                                            <input class="form-control" placeholder="กรอกชื่อเล่น" name="nickname" type="text" required="" autofocus="">                                        </td>
                                         <td align="left">
                                             เบอร์โทร
-                                            <input class="form-control" placeholder="กรอกเบอร์โทร" name="tel"  onkeypress="checkTel()" type="text" maxlength="12">
+                                            <input class="form-control" placeholder="กรอกเบอร์โทร" name="tel" type="text" maxlength="12">
                                         </td>
                                         <td align="left">
-                                            ตำแหน่ง <text font="" style="color:#FF0000">*</text>
-                                            <select class="form-control" name="org_position" required="" autofocus="">
-                                                <option value=""> กรุณาเลือกตำแหน่ง </option>
-                                                <option value="network"> network </option>
-                                                <option value="admin"> admin </option>
-                                                <option value="programing"> programing </option>
+                                            แผนก <text font="" style="color:#FF0000">*</text>
+                                            <select class="form-control" name="dep_id" required="" autofocus="">
+                                                <option value=""> กรุณาเลือกแผนก </option>
+                                                <?php foreach ($dep as $key => $value){ ?>
+                                                <option value="<?php echo $value['dep_id']; ?>"> <?php echo $value['dep_name']; ?> </option>
+                                                <?php } ?>
                                             </select>
                                         </td>
                                     </tr>
-                                    
+
                                     <tr>
                                         
+                                        <td align="left">
+                                            ตำแหน่ง <text font="" style="color:#FF0000">*</text>
+                                            <select class="form-control" name="position_id" required="" autofocus="">
+                                                <option value=""> กรุณาเลือกตำแหน่ง </option>
+                                                <?php foreach ($position as $key => $value){ ?>
+                                                <option value="<?php echo $value['position_id']; ?>"> <?php echo $value['position_name']; ?> </option>
+                                                <?php } ?>
+                                            </select>
+                                        </td>
                                         <td align="left">
                                             ชื่อเข้าใช้งานระบบ <text font="" style="color:#FF0000">*</text>
                                             <input class="form-control numberonly" type="text" name="user" placeholder="กรอกชื่อเขาใช้งาน" required="">
@@ -103,43 +114,55 @@
                         </td>                                                            
                         <td align="center">
                             ชื่อ - สกุล                                                               
-                        </td>                                               
+                        </td>
+                        <td align="center">
+                            ชื่อเล่น                                                               
+                        </td>
                         <td align="center">
                             แผนก                                                               
                         </td>
                         <td align="center">
                             ตำแหน่ง                                                               
-                        </td>                                              
+                        </td>  
+                        <td align="center">
+                            เบอร์โทร                                                               
+                        </td>
                         <td align="center" colspan="2">
                             จัดการ                                                               
                         </td>
                     </tr>
-                    <?php // foreach ($emp as $key => $value) { ?>
-                        <tr class="odd gradeA">
-                            <td align="center">
-                                <?php // echo $key + 1; ?>
-                            </td>
-                            <td>
-                                <?php // echo $value['emp_id'] ?>
-                            </td> 
-                            <td>
-                                <?php // echo $value['pf_name'] . "" . $value['fname'] . " " . $value['lname'] ?>
-                            </td>
-                            <td>
-                                <?php // echo $value['nickname'] ?>
-                            </td>
-                            <td>
-                                <?php // echo $value['dep_name'] ?>
-                            </td>
-                                                                                  
-                            <td align='center'>
-                                <a href="<?php //  echo site_url('employee/update/' . $value['emp_id']);  ?>"><i class="fa fa-pencil-square-o fa-1x" id="font-field"></i></a>
-                            </td>
-                            <td align='center'>
-                                <a href="<?php // echo site_url('employee/delete/' . $value['emp_id']); ?> " onclick = "JavaScript:return(confirm('คุณต้องการลบจริงหรือไม่'));"><i class="fa fa-trash-o fa-1x" id="font-field"></i> </a> 
-                            </td>
-                        </tr>
-                    <?php // } ?>
+                    <?php foreach ($emp as $key => $value) { ?>
+                    <tr class="odd gradeA">
+                        <td align="center">
+                            <?php  echo $key + 1; ?>
+                        </td>
+                        <td align="center">
+                            <?php  echo $value['emp_code'] ?>
+                        </td> 
+                        <td align="center">
+                            <?php  echo $value['emp_fname'] . "  " . $value['emp_lname'] ?>
+                        </td>
+                        <td align="center">
+                            <?php  echo $value['nickname'] ?>
+                        </td>
+                        <td align="center">
+                            <?php  echo $value['dep_name'] ?>
+                        </td>
+                        <td align="center">
+                            <?php echo $value['position_name']; ?>
+                        </td>
+                        <td align="center">
+                            <?php echo $value['tel']; ?>
+                        </td>
+
+                        <td align='center'>
+                            <a href="<?php echo site_url('employee/update/' . $value['emp_id']); ?>"><i class="fa fa-pencil-square-o fa-1x" id="font-field"></i></a>
+                        </td>
+                        <td align='center'>
+                            <a href="<?php echo site_url('employee/delete/' . $value['emp_id']); ?> " onclick = "JavaScript:return(confirm('คุณต้องการลบ--<?php echo $value['emp_fname']." ".$value['emp_lname']; ?>--จริงหรือไม่'));"><i class="fa fa-trash-o fa-1x" id="font-field"></i> </a> 
+                        </td>
+                    </tr>
+                    <?php } ?>
                 </tbody>
             </table>
 

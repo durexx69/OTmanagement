@@ -9,19 +9,18 @@ class Employee_model extends CI_Model {
 
     public function get_employee() {
         $rs = $this->db->query(" SELECT " .
-                " em.emp_id, em.card_id, pf.pf_name, em.fname, em.lname, em.nickname, em.sex, dep.dep_name, em.level, em.birthday, em.blood, em.us, em.pw, em.height, em.weight, em.blood, em.image, em.start_date, em.skill, em.salary, em.dep_id, em.tel, em.pf_id " .
+                " emp_id, emp_code, emp_fname, emp_lname, nickname, tel, position_name, dep_name, us, passwd " .
                 " FROM " .
-                " ot.employee em " .
+                " employee emp " .
                 " INNER JOIN " .
-                " ot.department dep ON em.dep_id = dep.dep_id " .
+                " department dep ON emp.dep_id = dep.dep_id " .
                 " INNER JOIN " .
-                " ot.prefix pf  ON em.pf_id = pf.pf_id " .
-                " WHERE em.isdelete = 0 AND dep.isdelete = 0 AND pf.isdelete = 0");
+                " position p  ON emp.position_id = p.position_id ");
         return $rs->result_array();
     }
 
-        public function get_prefix() {
-        $pf = $this->db->query("Select * from prefix order by pf_id asc");
+        public function get_position() {
+        $pf = $this->db->query("Select * from position order by position_id asc");
         return $pf->result_array();
     }
 
@@ -33,26 +32,15 @@ class Employee_model extends CI_Model {
     public function insert_emp() {
         if ($this->input->post('ok') != null) {
             $ar = array(
-                "emp_id" => $this->input->post("emp_code"),
-                "pf_id" => $this->input->post("pf_id"),
-                "fname" => $this->input->post("fname_th"),
-                "lname" => $this->input->post("lname_th"),
+                "emp_code" => $this->input->post("emp_code"),
+                "emp_fname" => $this->input->post("emp_fname"),
+                "emp_lname" => $this->input->post("emp_lname"),
                 "nickname" => $this->input->post("nickname"),
-                "card_id" => $this->input->post("card_id"),
-                "sex" => $this->input->post("sex"),
-                "birthday" => $this->input->post("birthday"),
-                "blood" => $this->input->post("blood"),
-                "weight" => $this->input->post("weight"),
-                "height" => $this->input->post("hight"),
                 "tel" => $this->input->post("tel"),
                 "dep_id" => $this->input->post("dep_id"),
-                "level" => $this->input->post("org_position"),
-                "salary" => $this->input->post("salary"),
-                "start_date" => $this->input->post("start_date"),
-                "skill" => $this->input->post("skill"),
+                "position_id" => $this->input->post("position_id"),
                 "us" => $this->input->post("user"),
-                "pw" => $this->input->post("passwd"),
-                "image" => $this->input->post("file")
+                "passwd" => $this->input->post("passwd")              
             );
             $this->db->insert('employee', $ar);
         }
@@ -65,40 +53,29 @@ class Employee_model extends CI_Model {
     public function update_employee($id) {
         if ($this->input->post('ok') != null) {
             $ar = array(
-                "emp_id" => $this->input->post("emp_code"),
-                "pf_id" => $this->input->post("pf_id"),
-                "fname" => $this->input->post("fname_th"),
-                "lname" => $this->input->post("lname_th"),
+                "emp_code" => $this->input->post("emp_code"),
+                "emp_fname" => $this->input->post("emp_fname"),
+                "emp_lname" => $this->input->post("emp_lname"),
                 "nickname" => $this->input->post("nickname"),
-                "card_id" => $this->input->post("card_id"),
-                "sex" => $this->input->post("sex"),
-                "birthday" => $this->input->post("birthday"),
-                "blood" => $this->input->post("blood"),
-                "weight" => $this->input->post("weight"),
-                "height" => $this->input->post("hight"),
                 "tel" => $this->input->post("tel"),
                 "dep_id" => $this->input->post("dep_id"),
-                "level" => $this->input->post("org_position"),
-                "salary" => $this->input->post("salary"),
-                "start_date" => $this->input->post("start_date"),
-                "skill" => $this->input->post("skill"),
+                "position_id" => $this->input->post("position_id"),
                 "us" => $this->input->post("user"),
-                "pw" => $this->input->post("passwd"),
-                "image" => $this->input->post("file")
+                "passwd" => $this->input->post("passwd")
             );
             $this->db->where('emp_id', $id);
             $this->db->update("employee", $ar);
             redirect(site_url('employee'));
         }
         $sql = " SELECT " .
-                " em.emp_id, em.card_id, pf.pf_name, em.fname, em.lname, em.nickname, em.sex, dep.dep_name, em.level, em.birthday, em.blood, em.us, em.pw, em.height, em.weight, em.blood, em.image, em.start_date, em.skill, em.salary, em.dep_id, em.tel, em.pf_id " .
+                " emp_id, emp_code, emp_fname, emp_lname, nickname, tel, position_name, dep_name, us, passwd " .
                 " FROM " .
-                " ot.employee em " .
+                " employee emp " .
                 " INNER JOIN " .
-                " ot.department dep ON em.dep_id = dep.dep_id " .
+                " department dep ON emp.dep_id = dep.dep_id " .
                 " INNER JOIN " .
-                " ot.prefix pf  ON em.pf_id = pf.pf_id " .
-                " WHERE em.isdelete = 0 AND dep.isdelete = 0 AND pf.isdelete = 0 AND emp_id = '$id' ";
+                " position p  ON emp.position_id = p.position_id " .
+                " WHERE emp_id = '$id' ";
         $result = $this->db->query($sql);
         return $result->row_array();
     }

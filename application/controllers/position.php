@@ -8,33 +8,30 @@ class position extends CI_Controller {
 
     public function __construct() {
         parent::__construct();
-        $this->load->model('Department_model');
+        $this->load->model('Position_model');
     }
 
     public function index() {
-
-//        $data['pillar_pl'] = $this->Department_model->get_pillar();
-//        $data['department'] = $this->Department_model->getdepartment();
-        $this->load->view("position/add_position");
+        $data['position'] = $this->Position_model->getposition();
+        $this->load->view("position/add_position",$data);
     }
 
-//    public function delete($id) {
-//
-//        $this->Department_model->delete_department($id);
-//        redirect(site_url('department'));
-//    }
-//
-//    public function insert() {
-//
-//        $this->Department_model->insert_department();
-//        redirect(site_url('department'));
-//    }
-//
-//    public function update($id) {
-//        
-//        $data['pillar_pl'] = $this->Department_model->get_pillar();
-//        $data['department'] = $this->Department_model->update_department($id);
-//        $this->load->view('department/update_department', $data);
-//    }
+    public function delete($id) {
+
+        $this->Position_model->delete_position($id);
+        redirect(site_url('position'));
+    }
+
+    public function insert() {
+
+        $this->Position_model->insert_position();
+        redirect(site_url('position'));
+    }
+
+    public function update($id) {
+        
+        $data['position'] = $this->Position_model->update_position($id);
+        $this->load->view('position/update_position', $data);
+    }
 
 }

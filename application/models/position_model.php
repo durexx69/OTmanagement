@@ -1,71 +1,43 @@
 <?php
 
-class Department_model extends CI_Model {
+class Position_model extends CI_Model {
 
     public function __construct() {
         parent::__construct();
 //        $this->output->enable_profiler(TRUE);
     }
 
-    public function getdepartment() {
-        $rs = $this->db->query(" SELECT " .
-                " de.dep_id, " .
-                " de.dep_name, " .
-                " pl.pillar_name, " .
-                " de.isdelete, " .
-                " pl.isdelete " .
-                " FROM " .
-                " ot.department de " .
-                " INNER JOIN " .
-                " ot.pillar pl ON de.pillar_id = pl.pillar_id " .
-                " WHERE " .
-                " de.isdelete = 0 AND pl.isdelete = 0" .
-                " ORDER BY de.dep_id asc");
+    public function getposition() {
+        $rs = $this->db->query(" SELECT * From position");
         return $rs->result_array();
     }
 
-    public function get_pillar() {
-        $pl = $this->db->query("Select * from pillar order by pillar_id asc");
-        return $pl->result_array();
-    }
-
-    public function insert_department() {
+    public function insert_position() {
         if ($this->input->post('ok') != null) {
             $ar = array(
-                "pillar_id" => $this->input->post("pillar"),
-                "dep_name" => $this->input->post("department")
+                "position_name" => $this->input->post("position")
             );
-            $this->db->insert('department', $ar);
+            $this->db->insert('position', $ar);
         }
     }
 
-    public function delete_department($id) {
-        $this->db->delete('department', array('dep_id' => $id));
+    public function delete_position($id) {
+        $this->db->delete('position', array('position_id' => $id));
     }
 
-    public function update_department($id) {
+    public function update_position($id) {
         if ($this->input->post('ok') != null) {
             $ar = array(
-                "pillar_id" => $this->input->post("pillar"),
-                "dep_name" => $this->input->post("department")
+                "position_name" => $this->input->post("position")
             );
-            $this->db->where('dep_id', $id);
-            $this->db->update("department", $ar);
-            redirect(site_url('department'));
+            $this->db->where('position_id', $id);
+            $this->db->update("position", $ar);
+            redirect(site_url('position'));
         }
         $sql = " SELECT " .
-                " de.dep_id, " .
-                " de.pillar_id, ".
-                " de.dep_name, " .
-                " pl.pillar_name, " .
-                " de.isdelete, " .
-                " pl.isdelete " .
-                " FROM " .
-                " ot.department de " .
-                " INNER JOIN " .
-                " ot.pillar pl ON de.pillar_id = pl.pillar_id " .
+                " * From position " .
                 " WHERE " .
-                " de.isdelete = 0 AND pl.isdelete = 0 AND dep_id = '$id' ";
+                " position_id = '$id' ";
         $result = $this->db->query($sql);
         return $result->row_array();
     }

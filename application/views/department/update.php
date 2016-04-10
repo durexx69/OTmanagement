@@ -15,7 +15,7 @@
                 <div class="col-md-12 col-sm-12 col-xs-12">
                     <div class="x_panel">
                         <div class="x_title">
-                            <h2>จัดการข้อมูล Pillar</h2>
+                            <h2>จัดการข้อมูล แผนก</h2>
 
                             <div class="clearfix"></div>
                         </div>
@@ -24,26 +24,7 @@
                             <?php ?>
                             <?php echo form_open('department/update/' . $department['dep_id']); ?>
                             <table class="table table-bordered table-hover" id="dataTables-example">    
-                                <tbody>
-                                    <tr class="odd gradeA">
-                                        <td align="center">
-                                            ชื่อ Pillar
-                                        </td>
-                                        
-                                        <td>
-                                            <select class="form-control" name="pillar">
-                                                <option value="">กรุณาเลือก Pillar </option>
-                                                <?php foreach ($pillar_pl as $key => $value) { ?>
-                                                    <?php if ($department['pillar_id'] == $value['pillar_id']) { ?>
-                                                        <option selected="selected" value="<?php echo $value['pillar_id']; ?>"> <?php echo $value['pillar_name']; ?> </option>
-                                                    <?php } else { ?>
-                                                        <option value="<?php echo $value['pillar_id']; ?>"> <?php echo $value['pillar_name']; ?> </option>
-                                                    <?php } ?>
-                                                <?php } ?>
-                                            </select>   
-                                        </td>                                                            
-
-                                    </tr>
+                                <tbody>                                   
                                     <tr class="odd gradeA">
                                         <td align="center">
                                             แผนก

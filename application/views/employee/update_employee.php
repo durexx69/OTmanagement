@@ -3,7 +3,7 @@
     <head>
         <?php //include '../segment/meta.php'; ?>
         <?php $this->load->view('segment/meta'); ?>
-        <title> Stream I.T. OverTime </title>
+        <title> Overtime Record Management System </title>
         <?php $this->load->view('segment/css_import'); ?>
     </head>
     <body class="nav-md">

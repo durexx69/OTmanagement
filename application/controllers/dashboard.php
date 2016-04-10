@@ -10,7 +10,7 @@ class dashboard extends CI_Controller
     }
     
     public function index(){
-
+        
 //        $data['nums'] =  $this->Student_model->getdata();
         $this->load->view("dashboard/view_dashboard");
     }

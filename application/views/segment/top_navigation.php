@@ -10,7 +10,7 @@
             <ul class="nav navbar-nav navbar-right">
                 <li class="">
                     <a href="javascript:;" class="user-profile dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
-                        <img src="<?php echo base_url();?>inc/images/img.jpg" alt="">ณัฐวุฒิ มาลีรัตน์
+                        <img src="<?php echo base_url(); ?>inc/images/img.jpg" alt="">ณัฐวุฒิ มาลีรัตน์
                         <span class=" fa fa-angle-down"></span>
                     </a>
                     <ul class="dropdown-menu dropdown-usermenu animated fadeInDown pull-right">
@@ -18,7 +18,7 @@
                         </li>
 
 
-                        <li><a href="login.php"><i class="fa fa-sign-out pull-right"></i> Log Out</a>
+                        <li><a href="http://localhost/managementOT/index.php/login"><i class="fa fa-sign-out pull-right"></i> Log Out</a>
                         </li>
                     </ul>
                 </li>
@@ -32,7 +32,7 @@
                         <li>
                             <a>
                                 <span class="image">
-                                    <img src="<?php echo base_url();?>inc/images/img.jpg" alt="Profile Image" />
+                                    <img src="<?php echo base_url(); ?>inc/images/img.jpg" alt="Profile Image" />
                                 </span>
                                 <span>
                                     <span>John Smith</span>
