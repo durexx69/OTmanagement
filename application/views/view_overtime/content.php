@@ -26,16 +26,17 @@
                         <div class="col-md-12 col-sm-12 col-xs-12">
                             <div class="x_panel">
 
-                                <?php // echo form_open('view_overtime/insert') ?>
+                                <?php echo form_open('view_overtime/insert') ?>
                                 <table class="table table-bordered table-hover" id="dataTables-example">    
                                     <tbody>
                                         <tr class="odd gradeA">                                        
                                             <td align="center">
-                                                
+
                                                 ประจำเดือน
                                             </td>
                                             <td>
                                                 <input class="form-control" type="date" placeholder="ประจำเดือน" name="monthly" value="<?php echo date('Y-m-d'); ?>">
+                                                <input type="hidden" name="emp_id" value="<?php echo $_SESSION['emp_id']; ?>">
                                             </td>                                                            
                                         </tr>
                                     </tbody>
@@ -49,7 +50,7 @@
                                     </div>
                                 </div>
 
-                                <?php // echo form_close(); ?>
+                                <?php echo form_close(); ?>
                             </div>
                         </div>
                     </div>
@@ -80,7 +81,7 @@
                                 <td>
                                     <?php // echo $value['monthly'] ?>
                                 </td> 
-                                <td><a href="<?php // echo site_url('managedata_overtime/index/' . $value['overtime_id']) ?>" class="btn btn-success btn-xs">จัดการข้อมูล โอ.ที.</a>                                                              </td>
+                                <td><a href="<?php // echo site_url('managedata_overtime/index/' . $value['overtime_id'])  ?>" class="btn btn-success btn-xs">จัดการข้อมูล โอ.ที.</a>                                                              </td>
                                 </td>
                             </tr>                                        
                         <?php // } ?>

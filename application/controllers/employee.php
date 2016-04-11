@@ -16,7 +16,7 @@ class employee extends CI_Controller {
         $data['dep'] = $this->Employee_model->get_department();
         $data['position'] = $this->Employee_model->get_position();
         $data['emp'] = $this->Employee_model->get_employee();
-        $this->load->view("employee/add_employee",$data);
+        $this->load->view("employee/add_employee", $data);
     }
 
     public function delete($id) {
@@ -32,10 +32,16 @@ class employee extends CI_Controller {
     }
 
     public function update($id) {
-    
+
         $data['dep'] = $this->Employee_model->get_department();
         $data['position'] = $this->Employee_model->get_position();
         $data['emp'] = $this->Employee_model->update_employee($id);
         $this->load->view('employee/update_employee', $data);
     }
+
+    public function update_private() {
+
+        $this->update($_SESSION['emp_id']);
+    }
+
 }
