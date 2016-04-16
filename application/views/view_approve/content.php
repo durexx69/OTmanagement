@@ -95,28 +95,8 @@
                             </tr>
                         </tbody>
                         <table class="table table-bordered">
-                            <thead>
-                                <tr>
-                                    <th class="column-title" colspan="12"> ข้อมูลโอที [StandBy] </th> 
-                                </tr>
-                                <tr class="headings">
-                                    <th class="column-title" rowspan="2">ลำดับ</th>
-                                    <th class="column-title" rowspan="2">สถานะ</th>
-                                    <th class="column-title" rowspan="2"> ว/ด/ป </th>
-                                    <th class="column-title" rowspan="2"> งานที่ทำ/สถานที่ไป </th>
-                                    <th class="column-title" rowspan="2"> StandBy </th>
-                                    <th class="column-title" rowspan="2"> เบี้ยเลี้ยง </th>
-                                    <th class="column-title" rowspan="2"> จัดการ </th>
-                                </tr>
-                            </thead>
-                            <tr class="odd pointer">
-                                <td class="a-center ">1</td>
-                                <td align="center"> </td>
-                                <td align="center">2 ก.ค. 58</td>
-                                <td >ติดตั้ง Royter/KCS เพลินจิต</td>
-                                <td></td>
-                                <td align="center"> </td>
-                                <td> <a href="Edit_OT.php" class="btn btn-dark btn-xs"><i class="fa fa-history"></i> รออนุมัติ </a> </td>                                                        </tr>
+                            
+                            
                         </table>
                 </form>
                 <!-- Modal -->
