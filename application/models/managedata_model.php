@@ -8,15 +8,17 @@ class Managedata_model extends CI_Model {
     }
 
     public function get_managedata() {
-        $rs = $this->db->query(" SELECT * FROM issue_overtime ");
+        $rs = $this->db->query(" SELECT * " .
+                " FROM overtime join issue_overtime on overtime.overtime_id = issue_overtime. overtime_id " .
+                " WHERE emp_id =  " . $_SESSION['emp_id']);
         return $rs->result_array();
-    }   
-    
-        public function get_overtime() {
+    }
+
+    public function get_overtime() {
         $rs = $this->db->query(" SELECT * FROM overtime ");
         return $rs->result_array();
-    } 
-    
+    }
+
     public function insert_managedata() {
         if ($this->input->post('ok') != null) {
             $ar = array(
@@ -26,7 +28,7 @@ class Managedata_model extends CI_Model {
 //                "end_date" => $this->input->post("end_date"),
                 "work" => $this->input->post("work"),
                 "location_work" => $this->input->post("location_work"),
-                "overtime_id" => $this->input->post("overtime_id") 
+                "overtime_id" => $this->input->post("overtime_id")
             );
             return $this->db->insert('issue_overtime', $ar);
         }

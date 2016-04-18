@@ -46,14 +46,14 @@
                                     <tr class="odd gradeA">                                                                                
                                         <td align="left">
                                             ชื่อเล่น<text font="" style="color:#FF0000">*</text>
-                                            <input class="form-control" placeholder="กรอกชื่อเล่น" name="nickname" type="text" required="" autofocus="">                                        </td>
+                                            <input class="form-control" placeholder="กรอกชื่อเล่น" name="nickname" type="text" required="" autofocus="" >                                        </td>
                                         <td align="left">
                                             เบอร์โทร
                                             <input class="form-control" placeholder="กรอกเบอร์โทร" name="tel" type="text" maxlength="12">
                                         </td>
                                         <td align="left">
                                             แผนก <text font="" style="color:#FF0000">*</text>
-                                            <select class="form-control" name="dep_id" required="" autofocus="">
+                                            <select class="form-control" name="dep_id" required="" autofocus="" >
                                                 <option value=""> กรุณาเลือกแผนก </option>
                                                 <?php foreach ($dep as $key => $value){ ?>
                                                 <option value="<?php echo $value['dep_id']; ?>"> <?php echo $value['dep_name']; ?> </option>

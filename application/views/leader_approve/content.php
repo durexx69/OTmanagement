@@ -36,13 +36,13 @@
                             </thead>
 
                             <tbody>                        
-                                <tr class="odd pointer">
+<!--                                <tr class="odd pointer">
                                     <td>1</td>
                                     <td>55321</td>
                                     <td>ธนกฤษ พรมศิริ</td>
                                     <td >Banking</td>
                                     <td>กรกฎาคม</td> 
-                                    <td><a href="Checkover_EditOT3.php" class="btn btn-success btn-xs">ตรวจทานแล้ว</a>
+                                    <td><a href="Checkover_EditOT3.php" class="btn btn-success btn-xs">ข้อมูล OT</a>
                                     </td>
                                 </tr>
 
@@ -52,17 +52,17 @@
                                     <td>นายประวิทย์ สารพัน</td>
                                     <td >Banking</td>
                                     <td>กรกฎาคม</td>
-                                    <td><a href="Checkover_EditOT3.php" class="btn btn-success btn-xs">ตรวจทานแล้ว</a>
+                                    <td><a href="Checkover_EditOT3.php" class="btn btn-success btn-xs">ข้อมูล OT</a>
                                     </td>
-                                </tr>
+                                </tr>-->
 
                                 <tr class="odd pointer">
-                                    <td>3</td>
+                                    <td>1</td>
                                     <td>54352</td>
-                                    <td>นายณัฐวุฒิ มาลีรัตน์</td>
+                                    <td>นายพศธร ปอคูสุวรรณ</td>
                                     <td>Banking</td>
                                     <td>กรกฎาคม</td>
-                                    <td><a href="Checkover_EditOT2.php" class="btn btn-primary btn-xs">ข้อมูล OT</a>
+                                    <td><a href="Checkover_EditOT2.php" class="btn btn-success btn-xs">ข้อมูล OT</a>
                                     </td>
                                 </tr>
 

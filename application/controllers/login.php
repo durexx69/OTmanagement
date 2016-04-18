@@ -31,15 +31,5 @@ class login extends CI_Controller {
         redirect('login');
     }
 
-//    public function verifyUser() {
-//
-//        if ($this->Login_model->login($us, $passwd)) {
-//            return TRUE;
-//        } else {
-//            $this->form_validation->set_message('verifyUser', 'Incorrect Email or Password. Please try again.');
-//            return FALSE;
-//        }
-//    }
-
 }
 

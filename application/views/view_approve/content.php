@@ -23,80 +23,46 @@
                                 <th class="column-title" colspan="12"> ข้อมูลโอที [ทั่วไป] </th> 
                             </tr>
                             <tr class="headings">
-                                <th class="column-title" rowspan="2">ลำดับ</th>
-                                <th class="column-title" rowspan="2">สถานะ</th>
-                                <th class="column-title" rowspan="2"> ว/ด/ป </th>
-                                <th class="column-title" colspan="2"> เวลาทำงาน </th>
+                                <th class="column-title" rowspan="2">ลำดับ</th>                                            
+                                <th class="column-title" rowspan="2"> ว/ด/ป และ เวลา ที่เริ่ม </th>
+                                <th class="column-title" rowspan="2"> ว/ด/ป และ เวลา ที่สิ้นสุด </th>                                            
                                 <th class="column-title" rowspan="2"> งานที่ทำ/สถานที่ไป </th>
-                                <th class="column-title"> ล่วงเวลาปกติ </th>
-                                <th class="column-title"> ทำงานวันหยุด </th>
-                                <th class="column-title"> ล่วงเวลาวันหยุด </th>
-                                <th class="column-title" rowspan="2"> เบี้ยเลี้ยง </th>
                                 <th class="column-title" rowspan="2"> สถานะ </th>
-                            </tr>
-                            <tr>
-                                <th>
-                                    เวลาเข้า : 
-                                </th>
-                                <th>
-                                    เวลาออก :
-                                </th>
-                                <th>
-                                    1.5 เท่า : ชม.
-                                </th>
-                                <th>
-                                    2 เท่า : ชม.
-                                </th>
-                                <th>
-                                    3 เท่า : ชม.
-                                </th>
-                            </tr>
-
+                            </tr>                            
                         </thead>
                         <tbody>                        
                             <tr class="odd pointer">
-                                <td class="a-center ">1</td>
-                                <td align="center">H </td>
-                                <td align="center">2 ก.ค. 58</td>
-                                <td align="center">08:00 </td>
-                                <td align="center">22:00</td>
-                                <td >ติดตั้ง Royter/KCS เพลินจิต</td>
-                                <td align="center">8:00</td>
-                                <td align="center">5:00</td>
-                                <td align="center"> </td>
-                                <td align="center"> </td>
-                                <td> <a class="btn btn-success btn-xs"><i class="fa fa-check"></i> อนุมัติ </a> </td>                                                </tr>
+                                <td class="a-center ">1</td>                                
+                                <td align="center">2016-04-19 23:00:00</td>
+                                <td align="center">2016-04-20 02:00:00 </td>
+                                <td >ติดตั้ง Royter/KCS เพลินจิต</td>                                                               
+                                <td> <a class="btn btn-success btn-xs"><i class="fa fa-check"></i> อนุมัติ </a>
+                                    <button type="button" class="btn btn-danger btn-xs" data-toggle="modal" data-target="#myModal"><i class="fa fa-close"></i> ยกเลิก </button>
+                                    <button type="button" class="btn btn-info btn-xs" data-toggle="modal" data-target="#edit"><i class="fa fa-edit"></i> แก้ไข </button>
+                                </td>                                                </tr>
 
                             <tr class="odd pointer">
                                 <td class="a-center ">2</td>
-                                <td align="center"> </td>
-                                <td align="center">2 ก.ค. 58</td>
-                                <td align="center">08:00 </td>
-                                <td align="center">22:00</td>
+                                <td align="center">2016-04-19 23:00:00</td>
+                                <td align="center">2016-04-20 02:00:00 </td>
                                 <td >ติดตั้ง Royter/KCS เพลินจิต</td>
-                                <td align="center">8:00</td>
-                                <td align="center">5:00</td>
-                                <td align="center"> </td>
-                                <td align="center"> </td>
-                                <td> <button type="button" class="btn btn-danger btn-xs" data-toggle="modal" data-target="#myModal"><i class="fa fa-close"></i> ไม่อนุมัติ </button> </td>
-                            </tr>
+                                <td> <a class="btn btn-success btn-xs"><i class="fa fa-check"></i> อนุมัติ </a>
+                                    <button type="button" class="btn btn-danger btn-xs" data-toggle="modal" data-target="#myModal"><i class="fa fa-close"></i> ยกเลิก </button>
+                                    <button type="button" class="btn btn-info btn-xs" data-toggle="modal" data-target="#edit"><i class="fa fa-edit"></i> แก้ไข </button>
+                                </td>                            </tr>
                             <tr class="odd pointer">
                                 <td class="a-center ">3</td>
-                                <td align="center"> </td>
-                                <td align="center">2 ก.ค. 58</td>
-                                <td align="center">08:00</td>
-                                <td align="center">22:00</td>
+                                <td align="center">2016-04-19 23:00:00</td>
+                                <td align="center">2016-04-20 02:00:00 </td>
                                 <td >ติดตั้ง Royter/KCS เพลินจิต</td>
-                                <td align="center">8:00</td>
-                                <td align="center">5:00</td>
-                                <td align="center"> </td>
-                                <td align="center"> </td>
-                                <td> <button type="button" class="btn btn-info btn-xs" data-toggle="modal" data-target="#edit"><i class="fa fa-edit"></i> แก้ไข </button> </td>
-                            </tr>
+                                <td> <a class="btn btn-success btn-xs"><i class="fa fa-check"></i> อนุมัติ </a>
+                                    <button type="button" class="btn btn-danger btn-xs" data-toggle="modal" data-target="#myModal"><i class="fa fa-close"></i> ยกเลิก </button>
+                                    <button type="button" class="btn btn-info btn-xs" data-toggle="modal" data-target="#edit"><i class="fa fa-edit"></i> แก้ไข </button>
+                                </td>                            </tr>
                         </tbody>
                         <table class="table table-bordered">
-                            
-                            
+
+
                         </table>
                 </form>
                 <!-- Modal -->

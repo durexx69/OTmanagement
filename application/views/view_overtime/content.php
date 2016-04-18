@@ -31,17 +31,15 @@
                                     <tbody>
                                         <tr class="odd gradeA">                                        
                                             <td align="center">
-
                                                 ประจำเดือน
                                             </td>
                                             <td>
-                                                <input class="form-control" type="date" placeholder="ประจำเดือน" name="monthly" value="<?php echo date('Y-m-d'); ?>">
+                                                <input class="form-control" type="month" placeholder="ประจำเดือน" name="monthly" value="<?php echo date('Y-m-d'); ?>">
                                                 <input type="hidden" name="emp_id" value="<?php echo $_SESSION['emp_id']; ?>">
                                             </td>                                                            
                                         </tr>
                                     </tbody>
                                 </table>
-
                                 <div class="ln_solid"></div>
                                 <div class="form-group">
                                     <div class="col-md-6 col-sm-6 col-xs-12 col-md-offset-3">
@@ -49,13 +47,11 @@
                                         <button type="reset" class="btn btn-primary">ยกเลิก</button>
                                     </div>
                                 </div>
-
                                 <?php echo form_close(); ?>
                             </div>
                         </div>
                     </div>
                 </div>
-
                 <table class="table table-striped responsive-utilities jambo_table bulk_action">
                     <thead>
                         <tr class="headings">
@@ -70,21 +66,21 @@
                     </thead>
 
                     <tbody>  
-                        <?php // foreach ($ot as $key => $value) { ?>
-                            <tr class="odd pointer">
-                                <td class="a-center ">
-                                    <input type="checkbox" class="flat" name="table_records">
-                                </td>
-                                <td>
-                                    <?php // echo $key + 1; ?>
-                                </td>
-                                <td>
-                                    <?php // echo $value['monthly'] ?>
-                                </td> 
-                                <td><a href="<?php // echo site_url('managedata_overtime/index/' . $value['overtime_id'])  ?>" class="btn btn-success btn-xs">จัดการข้อมูล โอ.ที.</a>                                                              </td>
-                                </td>
-                            </tr>                                        
-                        <?php // } ?>
+                        <?php foreach ($emp as $key => $value) { ?>
+                        <tr class="odd pointer">
+                            <td class="a-center ">
+                                <input type="checkbox" class="flat" name="table_records">
+                            </td>
+                            <td align="">
+                                <?php echo $key + 1; ?>
+                            </td>
+                            <td>
+                                <?php echo $value['monthly'] ?>
+                            </td> 
+                            <td><a href="<?php echo site_url('managedata_overtime/index/' )   ?>" class="btn btn-success btn-xs">จัดการข้อมูล โอ.ที.</a>                                                              </td>
+                            </td>
+                        </tr>                                        
+                        <?php } ?>
                     </tbody>
 
                 </table>

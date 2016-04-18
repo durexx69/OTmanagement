@@ -23,9 +23,9 @@
                         <table class="table table-striped responsive-utilities jambo_table bulk_action">
                             <thead>
                                 <tr class="headings">
-                                    <th>
+<!--                                    <th>
                                         <input type="checkbox" id="check-all" class="flat">
-                                    </th>
+                                    </th>-->
                                     <th class="column-title">ลำดับที่</th>
                                     <th class="column-title"> รหัสพนักงาน </th>
                                     <th class="column-title"> ชื่อ-สกุล </th>
@@ -39,7 +39,7 @@
                             </thead>
 
                             <tbody>                        
-                                <tr class="odd pointer">
+<!--                                <tr class="odd pointer">
                                     <td class="a-center ">
                                         <input type="checkbox" class="flat" name="table_records">
                                     </td>
@@ -65,19 +65,15 @@
                                     <td>
                                         <a href="Checkover_EditOT3.php" class="btn btn-primary btn-xs"><i class="fa fa-folder"></i> ดูข้อมูล </a>
                                     </td>
-                                </tr>
+                                </tr>-->
 
                                 <tr class="odd pointer">
-                                    <td class="a-center ">
-                                        <input type="checkbox" class="flat" name="table_records">
-                                    </td>
-                                    <td>3</td>
+                                    <td>1</td>
                                     <td>54352</td>
-                                    <td>นายณัฐวุฒิ มาลีรัตน์</td>
+                                    <td>นายพศธร ปอคูสุวรรณ</td>
                                     <td>Banking</td>
                                     <td>กรกฎาคม</td>
-                                    <td>
-                                        <a href="Checkover_EditOT3.php" class="btn btn-primary btn-xs"><i class="fa fa-folder"></i> ดูข้อมูล </a>
+                                    <td><a href="Checkover_EditOT2.php" class="btn btn-success btn-xs">ข้อมูล OT</a>
                                     </td>
                                 </tr>
 

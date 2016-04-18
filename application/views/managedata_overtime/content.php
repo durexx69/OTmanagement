@@ -38,17 +38,6 @@
                                 <input type="datetime-local" class="form-control" id="end_date" name="end_date" value="<?php echo date('Y-m-d'); ?>" required="" autofocus="">
                             </td>
                         </tr>                    
-<!--                        <tr>
-                            <td coslpan="2">
-                                เวลา/เริ่มทำ   
-                                <input type="time" class="form-control" name="start_date" value="" required="" autofocus="">
-                            </td>
-                            <td colspan="2">
-                                เวลา/เริ่มทำ   
-                                <input type="time" class="form-control" name="end_date" value="" required="" autofocus="">
-                            </td>
-                        </tr>                            -->
-
                         <tr>
                             <td>
                                 งานที่ทำ
@@ -89,23 +78,12 @@
                                             <th rowspan="2">
                                                 #
                                             </th>
-                                            <th class="column-title" rowspan="2">ลำดับ</th>
-                                            <th class="column-title" rowspan="2">สถานะ</th>
-                                            <th class="column-title" rowspan="2"> ว/ด/ป ที่เริ่ม </th>
-                                            <th class="column-title" rowspan="2"> ว/ด/ป ที่สิ้นสุด </th>
-                                            <th class="column-title" colspan="2"> เวลาทำงาน </th>
+                                            <th class="column-title" rowspan="2">ลำดับ</th>                                            
+                                            <th class="column-title" rowspan="2"> ว/ด/ป และ เวลา ที่เริ่ม </th>
+                                            <th class="column-title" rowspan="2"> ว/ด/ป และ เวลา ที่สิ้นสุด </th>                                            
                                             <th class="column-title" rowspan="2"> งานที่ทำ/สถานที่ไป </th>                                            
                                             <th class="column-title" rowspan="2"> จัดการ </th>
-                                        </tr>
-                                        <tr>
-                                            <th>
-                                                เวลาเข้า : 
-                                            </th>
-                                            <th>
-                                                เวลาออก :
-                                            </th>                                           
-                                        </tr>
-
+                                        </tr>                                        
                                     </thead>
                                     <tbody>                        
                                         <tr class="odd pointer">
@@ -121,18 +99,9 @@
                                             </td>
                                             <td align="center">
                                                 <?php echo $value['end_date'] ?>
-                                            </td>
+                                            </td>                                                                                     
                                             <td align="center">
-                                                <?php // echo $value['start_time'] ?>
-                                            </td>
-                                            <td align="center">
-                                                <?php // echo $value['end_time'] ?>
-                                            </td>
-                                            <td >
-                                                <?php echo $value['work'] . "/" . " " . $value['location_work'] ?>
-                                            </td>                                          
-                                            <td align="center">
-                                                <?php // echo $value['type_allowance'] ?>
+                                                <?php echo $value['work']." " . "/" . " " .$value['location_work'] ?>
                                             </td>
                                             
                                             <td align='center'>
@@ -143,10 +112,10 @@
                                         </tr>
                                         <?php } ?>
 
-                                        <tr class="odd pointer">
-                                            <td align="right" colspan="7"><b>ค่ารวมเวลาทั้งหมด</b></td>
-                                            <td align="center" colspan="2"> 24:00 </td>
-                                        </tr>
+<!--                                        <tr class="odd pointer">
+                                            <td align="right" colspan="4"><b>ค่ารวมเวลาทั้งหมด</b></td>
+                                            <td align="center" colspan="3"> 24:00 </td>
+                                        </tr>-->
                                 </table>
                                 </tbody>
                                 </tbody>
@@ -154,7 +123,7 @@
                             <div class="ln_solid"></div>
                             <div class="form-group">
                                 <div class="col-md-6 col-sm-6 col-xs-12 col-md-offset-3">
-                                    <button type="submit" class="btn btn-success"><i class="fa fa-send-o"></i> รวมส่ง </button>
+                                    <button type="submit" class="btn btn-success"><i class="fa fa-send-o"></i> ส่งข้อมูล </button>
                                 </div>
                             </div>                           
 

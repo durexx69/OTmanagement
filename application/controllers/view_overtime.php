@@ -13,19 +13,25 @@ class view_overtime extends CI_Controller {
 
     public function index() {
         
-        $data['ot'] = $this->Viewot_model->get_viewot();
-        $this->load->view("view_overtime/view_overtime",$data);
-
+        $data['emp'] = $this->Viewot_model->get_ot();
+//        $data['ot'] = $this->Viewot_model->get_viewot();
+        $this->load->view("view_overtime/view_overtime", $data);
     }
 
-//    public function delete($id) {
-//        
-//        $this->Viewot_model->delete_viewot($id);
-//        redirect(site_url('managedata_overtime'));
-//    }
+    public function alert() {
+        $this->load->view("view_overtime/alert");
+    }
+
     public function insert() {
-        
-        $this->Viewot_model->insert_viewot();
-        redirect(site_url('managedata_overtime/index'));
+
+        $monthly = $this->input->post("monthly") . '-01';
+        $checkot = $this->Viewot_model->check($monthly, $_SESSION['emp_id']);
+        if ($checkot == 1) {
+            $this->Viewot_model->insert_viewot();
+            redirect(site_url('managedata_overtime/index'));
+        } else {
+            redirect('view_overtime/alert');
+        }
     }
+
 }
