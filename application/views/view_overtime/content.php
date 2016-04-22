@@ -77,7 +77,7 @@
                             <td>
                                 <?php echo $value['monthly'] ?>
                             </td> 
-                            <td><a href="<?php echo site_url('managedata_overtime/index/' )   ?>" class="btn btn-success btn-xs">จัดการข้อมูล โอ.ที.</a>                                                              </td>
+                            <td><a href="<?php echo site_url('managedata_overtime/index/'.$value['overtime_id'] ) ?>" class="btn btn-success btn-xs">จัดการข้อมูล โอ.ที.</a>                                                              </td>
                             </td>
                         </tr>                                        
                         <?php } ?>

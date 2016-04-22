@@ -81,7 +81,16 @@
                                             รหัสผ่าน <text font="" style="color:#FF0000">*</text>
                                             <input class="form-control numberonly" type="text" name="passwd" placeholder="กรอกรหัสผ่าน" required="">
                                         </td>
-                                    </tr>                                                                       
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            
+                                        </td>
+                                        <td>
+                                            
+                                        </td>
+                                    </tr>
+                                    
                                 </tbody>
                             </table>
 

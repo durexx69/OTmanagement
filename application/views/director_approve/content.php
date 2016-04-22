@@ -7,7 +7,6 @@
     </div>
 </div>
 <div class="ln_solid"></div>
-
 <div class="row">
     <div class="col-md-12">
         <div class="x_panel">
@@ -17,9 +16,8 @@
                 <div class="clearfix"></div>
             </div>
             <div class="x_content">
-
-                <div class="x_content">
-                    <form id="demo-form2" data-parsley-validate class="form-horizontal form-label-left">
+                <?php echo form_open(''); ?>
+                <div class="x_content">                   
                         <table class="table table-striped responsive-utilities jambo_table bulk_action">
                             <thead>
                                 <tr class="headings">
@@ -32,63 +30,33 @@
                                     <th class="column-title"> แผนก </th>
                                     <th class="column-title"> ประจำเดือน </th>
                                     <th class="column-title no-link last" align="center"><span class="nobr"> จัดการ </span></th>
-                                    <th class="bulk-actions" colspan="8">
+<!--                                    <th class="bulk-actions" colspan="8">
                                         <a class="antoo" style="color:#fff; font-weight:500;">เลือกทั้งหมด ( <span class="action-cnt"> </span> ) <i class="fa fa-chevron-down"></i></a>
-                                    </th>
+                                    </th>-->
                                 </tr>
                             </thead>
 
-                            <tbody>                        
-<!--                                <tr class="odd pointer">
-                                    <td class="a-center ">
-                                        <input type="checkbox" class="flat" name="table_records">
-                                    </td>
-                                    <td>1</td>
-                                    <td>55321</td>
-                                    <td>ธนกฤษ พรมศิริ</td>
-                                    <td >Banking</td>
-                                    <td>กรกฎาคม</td> 
-                                    <td>
-                                        <a href="Checkover_EditOT3.php" class="btn btn-primary btn-xs"><i class="fa fa-folder"></i> ดูข้อมูล </a>
+                            <tbody>
+                                <?php foreach ($director as $key => $value) { ?>
+                                <tr class="odd pointer">
+                                    <td><?php echo $key + 1; ?></td>
+                                    <td><?php echo $value['emp_code']; ?></td>
+                                    <td><?php echo $value['emp_fname']." ". $value['emp_lname']; ?></td>
+                                    <td><?php echo $value['dep_name']; ?></td>
+                                    <td><?php echo $value['monthly']; ?></td>
+                                    <td><a href="<?php echo site_url('director_approve/listdata/'. $value['emp_id'] )   ?>" name="emp_id" class="btn btn-success btn-xs">ข้อมูล OT</a>
                                     </td>
                                 </tr>
-
-                                <tr class="odd pointer">
-                                    <td class="a-center ">
-                                        <input type="checkbox" class="flat" name="table_records">
-                                    </td>
-                                    <td>2</td>
-                                    <td>57123</td>
-                                    <td>นายประวิทย์ สารพัน</td>
-                                    <td >Banking</td>
-                                    <td>กรกฎาคม</td>
-                                    <td>
-                                        <a href="Checkover_EditOT3.php" class="btn btn-primary btn-xs"><i class="fa fa-folder"></i> ดูข้อมูล </a>
-                                    </td>
-                                </tr>-->
-
-                                <tr class="odd pointer">
-                                    <td>1</td>
-                                    <td>54352</td>
-                                    <td>นายพศธร ปอคูสุวรรณ</td>
-                                    <td>Banking</td>
-                                    <td>กรกฎาคม</td>
-                                    <td><a href="Checkover_EditOT2.php" class="btn btn-success btn-xs">ข้อมูล OT</a>
-                                    </td>
-                                </tr>
-
+                                <?php } ?>
                             </tbody>
-
                         </table>
-                    </form>
-
+                    <?php echo form_close(); ?>
                     <div class="ln_solid"></div>
-                    <div class="form-group">
+<!--                    <div class="form-group">
                         <div class="col-md-6 col-sm-6 col-xs-12 col-md-offset-3">
                             <button type="submit" class="btn btn-success"><i class="fa fa-check"></i> อนุมัติ </button>
                         </div>
-                    </div>
-
+                    </div>-->
                 </div>
             </div>
         </div>
