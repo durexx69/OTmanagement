@@ -28,11 +28,11 @@
                                 ว/ด/ป ที่เริ่มทำ   
                                 <input type="datetime-local" class="form-control" id="request_date" name="start_date" value="<?php echo date('Y-m-d'); ?>" required="" autofocus="">
                             </td>
-                            <td align="left"> <br>
+<!--                            <td align="left"> <br>
                                 <input type="checkbox" class="flat" id="checkbox" name="checkbox">
                                 ทำ OT ข้ามวัน
 
-                            </td>
+                            </td>-->
                             <td align="left" colspan="2"> 
                                 ว/ด/ป ที่สิ้นสุดการทำ
                                 <input type="datetime-local" class="form-control" id="end_date" name="end_date" value="<?php echo date('Y-m-d'); ?>" required="" autofocus="">

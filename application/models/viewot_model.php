@@ -14,7 +14,7 @@ class Viewot_model extends CI_Model {
 
     public function get_ot() {
         $rs = $this->db->query(" SELECT * " .
-                " FROM overtime join issue_overtime on overtime.overtime_id = issue_overtime. overtime_id " .
+                " FROM overtime " .
                 " WHERE emp_id =  " . $_SESSION['emp_id']);
         return $rs->result_array();
     }

@@ -14,18 +14,17 @@ class Managedata_model extends CI_Model {
         return $rs->result_array();
     }
 
-    public function get_overtime() {
-        $rs = $this->db->query(" SELECT * FROM overtime ");
+    public function get_overtime($id) {
+        $rs = $this->db->query(" SELECT * FROM overtime WHERE overtime_id ='$id' ");
         return $rs->result_array();
     }
+    
 
     public function insert_managedata() {
         if ($this->input->post('ok') != null) {
             $ar = array(
                 "start_date" => $this->input->post("start_date"),
                 "end_date" => $this->input->post("end_date"),
-//                "start_date" => $this->input->post("start_date"),
-//                "end_date" => $this->input->post("end_date"),
                 "work" => $this->input->post("work"),
                 "location_work" => $this->input->post("location_work"),
                 "overtime_id" => $this->input->post("overtime_id")
@@ -43,8 +42,6 @@ class Managedata_model extends CI_Model {
             $ar = array(
                 "start_date" => $this->input->post("start_date"),
                 "end_date" => $this->input->post("end_date"),
-//                "start_time" => $this->input->post("start_date"),
-//                "end_time" => $this->input->post("end_date"),
                 "work" => $this->input->post("work"),
                 "location_work" => $this->input->post("location_work"),
                 "overtime_id" => $this->input->post("overtime_id")

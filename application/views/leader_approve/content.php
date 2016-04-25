@@ -36,35 +36,17 @@
                             </thead>
 
                             <tbody>                        
-<!--                                <tr class="odd pointer">
-                                    <td>1</td>
-                                    <td>55321</td>
-                                    <td>ธนกฤษ พรมศิริ</td>
-                                    <td >Banking</td>
-                                    <td>กรกฎาคม</td> 
-                                    <td><a href="Checkover_EditOT3.php" class="btn btn-success btn-xs">ข้อมูล OT</a>
+                                <?php foreach ($leader as $key => $value) { ?>
+                                <tr class="odd pointer">
+                                    <td><?php echo $key + 1; ?></td>
+                                    <td><?php echo $value['emp_code']; ?></td>
+                                    <td><?php echo $value['emp_fname']." ". $value['emp_lname']; ?></td>
+                                    <td><?php echo $value['dep_name']; ?></td>
+                                    <td><?php echo $value['monthly']; ?></td>
+                                    <td><a href="<?php echo site_url('leader_approve/listdata/'. $value['emp_id'] )   ?>" name="emp_id" class="btn btn-success btn-xs">ข้อมูล OT</a>
                                     </td>
                                 </tr>
-
-                                <tr class="odd pointer">
-                                    <td>2</td>
-                                    <td>57123</td>
-                                    <td>นายประวิทย์ สารพัน</td>
-                                    <td >Banking</td>
-                                    <td>กรกฎาคม</td>
-                                    <td><a href="Checkover_EditOT3.php" class="btn btn-success btn-xs">ข้อมูล OT</a>
-                                    </td>
-                                </tr>-->
-
-                                <tr class="odd pointer">
-                                    <td>1</td>
-                                    <td>54352</td>
-                                    <td>นายพศธร ปอคูสุวรรณ</td>
-                                    <td>Banking</td>
-                                    <td>กรกฎาคม</td>
-                                    <td><a href="Checkover_EditOT2.php" class="btn btn-success btn-xs">ข้อมูล OT</a>
-                                    </td>
-                                </tr>
+                                <?php } ?>
 
                             </tbody>
 
@@ -72,11 +54,11 @@
                     </form>
 
                     <div class="ln_solid"></div>
-                    <div class="form-group">
+<!--                    <div class="form-group">
                         <div class="col-md-6 col-sm-6 col-xs-12 col-md-offset-3">
                             <button type="submit" class="btn btn-success"><i class="fa fa-check"></i> อนุมัติ </button>
                         </div>
-                    </div>
+                    </div>-->
 
                 </div>
             </div>

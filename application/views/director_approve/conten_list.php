@@ -35,9 +35,9 @@
                             <?php foreach ($issue as $key => $value) { ?>
                             <tr class="odd pointer">
                                 <td align="center"><?php  echo $key +1; ?></td>                                
-                                <td align="center"><?php  echo $list['start_date']; ?></td>
-                                <td align="center"><?php  echo $list['end_date']; ?> </td>
-                                <td ><?php  echo $list['work']." ". $list['location_work']; ?></td>                                                               
+                                <td align="center"><?php  echo $value['start_date']; ?></td>
+                                <td align="center"><?php  echo $value['end_date']; ?> </td>
+                                <td ><?php  echo $value['work']." / ". $value['location_work']; ?></td>                                                               
                                 <td> <a class="btn btn-success btn-xs"><i class="fa fa-check"></i> อนุมัติ </a>
                                     <button type="button" class="btn btn-danger btn-xs" data-toggle="modal" data-target="#myModal"><i class="fa fa-close"></i> ยกเลิก </button>
                                     <button type="button" class="btn btn-info btn-xs" data-toggle="modal" data-target="#edit"><i class="fa fa-edit"></i> แก้ไข </button>

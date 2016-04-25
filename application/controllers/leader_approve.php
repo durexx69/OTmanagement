@@ -1,33 +1,28 @@
 <?php
+
 if (!defined('BASEPATH')) {
     exit('No direct script access allowed');
 }
 
-class leader_approve extends CI_Controller
-{
+class leader_approve extends CI_Controller {
+
     public function __construct() {
         parent::__construct();
+        $this->load->model('Leader_model');
     }
-    
-    public function index(){
 
-//        $data['nums'] =  $this->Student_model->getdata();
-        $this->load->view("leader_approve/leader_approve");
+    public function index() {
+
+        $data['leader'] = $this->Leader_model->getleader_appove();
+        $this->load->view("leader_approve/leader_approve", $data);
     }
-//    public function delete($id) {
-//        
-//        $this->Student_model->delete_student($id);
-//        $this->load->view("student/student");
-//    }
-//    public function insert() {
-//
-//        $this->Student_model->insert_student();
-//        $this->load->view('student/insert_student');
-//    }
-//    public function update($id){
-//               
-//        $data['result']= $this->Student_model->update_student($id);                
-//        $this->load->view('student/update_student',$data);
-//    }
+
+    public function listdata($id) {
+
+        $data['issue'] = $this->Leader_model->issueot($id);
+        $data['list'] = $this->Leader_model->list_data($id);
+        $this->load->view("director_approve/list_director", $data);
+    }
+
 }
 
