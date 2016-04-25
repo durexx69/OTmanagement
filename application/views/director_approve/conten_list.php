@@ -44,8 +44,8 @@
                         </table>
 
                         <div class="col-md-6 col-sm-6 col-xs-12 col-md-offset-3">
-                            <a class=" btn btn-success" href="<?php echo site_url('director_approve/approve_ot/' . $issue_id); ?> " onclick = "JavaScript:return(confirm('คุณต้องการอนุมัติ'));"><i  id="font-field"></i> sf</a> 
-                            <a class=" btn btn-danger " href="<?php //echo site_url('employee/delete/' . $value['emp_id']); ?> " onclick = "JavaScript:return(confirm('คุณต้องการลบ--<?php //echo $value['emp_fname'] . " " . $value['emp_lname']; ?>--จริงหรือไม่'));"><i  id="font-field"></i> we</a>                            
+                            <a class=" btn btn-success" href="<?php echo site_url('director_approve/approve_ot/' . $issue_id); ?> " onclick = "JavaScript:return(confirm('คุณต้องการอนุมัติรายการนี้ใช่หรือไม่'));"><i  id="font-field"></i> อนุมัติ </a> 
+                            <a class=" btn btn-danger " href="<?php echo site_url('director_approve/cancel_ot/' . $issue_id); ?> " onclick = "JavaScript:return(confirm('คุณต้องการลบรายการนี้จริงหรือไม่'));"><i  id="font-field"></i> ยกเลิก </a>                            
 
                         </div>
 

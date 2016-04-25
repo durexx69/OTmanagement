@@ -20,19 +20,6 @@ class Director_model extends CI_Model {
         return $rs->result_array();
     }
 
-//    public function insert_position() {
-//        if ($this->input->post('ok') != null) {
-//            $ar = array(
-//                "position_name" => $this->input->post("position")
-//            );
-//            $this->db->insert('position', $ar);
-//        }
-//    }
-//
-//    public function delete_position($id) {
-//        $this->db->delete('position', array('position_id' => $id));
-//    }
-
     public function list_data($id) {
         if ($this->input->post('emp_id') != null) {
             $ar = array(
@@ -62,7 +49,11 @@ class Director_model extends CI_Model {
     }
 
     public function appove_ot($id) {
-           $this->db->update('overtime', array('status' => '1','approve_hr'=>$_SESSION['emp_id']), array('overtime_id' => $id));
+        $this->db->update('overtime', array('status' => '1', 'approve_hr' => $_SESSION['emp_id']), array('overtime_id' => $id));
+    }
+
+    public function cancel_ot($id) {
+        $this->db->update('overtime', array('status' => '2', 'approve_hr' => $_SESSION['emp_id']), array('overtime_id' => $id));
     }
 
 }

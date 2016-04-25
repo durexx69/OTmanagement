@@ -18,18 +18,24 @@ class director_approve extends CI_Controller {
     }
 
     public function listdata($id) {
-        
+
         $data['issue'] = $this->Director_model->issueot($id);
         $data['list'] = $this->Director_model->list_data($id);
         $data['issue_id'] = $id;
-        $this->load->view("director_approve/list_director",$data);
+        $this->load->view("director_approve/list_director", $data);
+    }
+
+    public function approve_ot($id) {
+        
+        $data['cancel'] = $this->Director_model->cancel_ot($id);
+        $data['approve'] = $this->Director_model->appove_ot($id);
+        $this->load->view('director_approve/director_approve', $data);
     }
     
-    public function approve_ot($id){
+        public function cancel_ot($id) {
         
-        $data['approve'] = $this->Director_model->appove_ot($id);
-        
-        $this->load->view('director_approve',$data);
+        $data['cancel'] = $this->Director_model->cancel_ot($id);
+        $this->load->view('director_approve/director_approve', $data);
     }
 }
 
