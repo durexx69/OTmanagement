@@ -14,8 +14,8 @@ class Managedata_model extends CI_Model {
         return $rs->result_array();
     }
 
-    public function get_overtime($id) {
-        $rs = $this->db->query(" SELECT * FROM overtime WHERE overtime_id ='$id' ");
+    public function get_overtime() {
+        $rs = $this->db->query(" SELECT * FROM overtime ");
         return $rs->result_array();
     }
     

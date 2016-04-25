@@ -16,6 +16,7 @@ class employee extends CI_Controller {
         $data['dep'] = $this->Employee_model->get_department();
         $data['position'] = $this->Employee_model->get_position();
         $data['emp'] = $this->Employee_model->get_employee();
+        $data['leaderlist'] = $this->Employee_model->get_leaderlist();
         $this->load->view("employee/add_employee", $data);
     }
 
@@ -36,6 +37,7 @@ class employee extends CI_Controller {
         $data['dep'] = $this->Employee_model->get_department();
         $data['position'] = $this->Employee_model->get_position();
         $data['emp'] = $this->Employee_model->update_employee($id);
+        $data['leaderlist'] = $this->Employee_model->get_leaderlist();
         $this->load->view('employee/update_employee', $data);
     }
 

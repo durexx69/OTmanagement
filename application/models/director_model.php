@@ -8,28 +8,30 @@ class Director_model extends CI_Model {
     }
 
     public function getdirector_appove() {
-        $rs = $this->db->query(" SELECT * FROM employee " .
-                " INNER JOIN " .
-                " department " .
-                " ON " .
-                " employee.dep_id = department.dep_id " .
-                " INNER JOIN " .
-                " overtime ON overtime.emp_id = employee.emp_id ");
+        $rs = $this->db->query(" SELECT emp.emp_id,emp.emp_code,emp.emp_fname,emp.emp_lname,emp.nickname, dep.dep_id, dep.dep_name,emp.leader_id," .
+                "ot.overtime_id,ot.monthly " .
+                "FROM employee emp " .
+                "INNER JOIN " .
+                "department dep " .
+                "ON " .
+                "emp.dep_id = dep.dep_id " .
+                "INNER JOIN " .
+                "overtime ot ON ot.emp_id = emp.emp_id WHERE approve_hr = 0 ");
         return $rs->result_array();
     }
 
-    public function insert_position() {
-        if ($this->input->post('ok') != null) {
-            $ar = array(
-                "position_name" => $this->input->post("position")
-            );
-            $this->db->insert('position', $ar);
-        }
-    }
-
-    public function delete_position($id) {
-        $this->db->delete('position', array('position_id' => $id));
-    }
+//    public function insert_position() {
+//        if ($this->input->post('ok') != null) {
+//            $ar = array(
+//                "position_name" => $this->input->post("position")
+//            );
+//            $this->db->insert('position', $ar);
+//        }
+//    }
+//
+//    public function delete_position($id) {
+//        $this->db->delete('position', array('position_id' => $id));
+//    }
 
     public function list_data($id) {
         if ($this->input->post('emp_id') != null) {
@@ -54,9 +56,14 @@ class Director_model extends CI_Model {
                 "INNER JOIN " .
                 "issue_overtime " .
                 "ON " .
-                "overtime.overtime_id = issue_overtime.overtime_id ".
-                " WHERE overtime.emp_id =  '$id' ");
+                "overtime.overtime_id = issue_overtime.overtime_id " .
+                " WHERE overtime.overtime_id =  '$id' ");
         return $rs->result_array();
     }
 
+    public function appove_ot($id) {
+           $this->db->update('overtime', array('status' => '1','approve_hr'=>$_SESSION['emp_id']), array('overtime_id' => $id));
+    }
+
 }
+

@@ -55,21 +55,21 @@
                                             แผนก <text font="" style="color:#FF0000">*</text>
                                             <select class="form-control" name="dep_id" required="" autofocus="" >
                                                 <option value=""> กรุณาเลือกแผนก </option>
-                                                <?php foreach ($dep as $key => $value){ ?>
-                                                <option value="<?php echo $value['dep_id']; ?>"> <?php echo $value['dep_name']; ?> </option>
+                                                <?php foreach ($dep as $key => $value) { ?>
+                                                    <option value="<?php echo $value['dep_id']; ?>"> <?php echo $value['dep_name']; ?> </option>
                                                 <?php } ?>
                                             </select>
                                         </td>
                                     </tr>
 
                                     <tr>
-                                        
+
                                         <td align="left">
                                             ตำแหน่ง <text font="" style="color:#FF0000">*</text>
-                                            <select class="form-control" name="position_id" required="" autofocus="">
+                                            <select class="form-control" name="position_id" id="pt_id1" required="" autofocus="">
                                                 <option value=""> กรุณาเลือกตำแหน่ง </option>
-                                                <?php foreach ($position as $key => $value){ ?>
-                                                <option value="<?php echo $value['position_id']; ?>"> <?php echo $value['position_name']; ?> </option>
+                                                <?php foreach ($position as $key => $value) { ?>
+                                                    <option value="<?php echo $value['position_id']; ?>"> <?php echo $value['position_name']; ?> </option>
                                                 <?php } ?>
                                             </select>
                                         </td>
@@ -83,14 +83,17 @@
                                         </td>
                                     </tr>
                                     <tr>
-                                        <td>
-                                            
-                                        </td>
-                                        <td>
-                                            
-                                        </td>
+                                        <td align="left">
+                                            หัวหน้างาน <text font="" style="color:#FF0000">*</text>
+                                            <select class="form-control" name="leader" id="pt_id2" required="" autofocus="">
+                                                <option value=""> กรุณาเลือกตำแหน่ง </option>
+                                                <?php foreach ($leaderlist as $key => $value) { ?>
+                                                    <option value="<?php echo $value['emp_id']; ?>"> <?php echo $value['emp_fname'] . " " . $value['emp_lname']; ?> </option>
+                                                <?php } ?>
+                                            </select>
+                                        </td>                                     
                                     </tr>
-                                    
+
                                 </tbody>
                             </table>
 
@@ -141,36 +144,36 @@
                         </td>
                     </tr>
                     <?php foreach ($emp as $key => $value) { ?>
-                    <tr class="odd gradeA">
-                        <td align="center">
-                            <?php  echo $key + 1; ?>
-                        </td>
-                        <td align="center">
-                            <?php  echo $value['emp_code'] ?>
-                        </td> 
-                        <td align="center">
-                            <?php  echo $value['emp_fname'] . "  " . $value['emp_lname'] ?>
-                        </td>
-                        <td align="center">
-                            <?php  echo $value['nickname'] ?>
-                        </td>
-                        <td align="center">
-                            <?php  echo $value['dep_name'] ?>
-                        </td>
-                        <td align="center">
-                            <?php echo $value['position_name']; ?>
-                        </td>
-                        <td align="center">
-                            <?php echo $value['tel']; ?>
-                        </td>
+                        <tr class="odd gradeA">
+                            <td align="center">
+                                <?php echo $key + 1; ?>
+                            </td>
+                            <td align="center">
+                                <?php echo $value['emp_code'] ?>
+                            </td> 
+                            <td align="center">
+                                <?php echo $value['emp_fname'] . "  " . $value['emp_lname'] ?>
+                            </td>
+                            <td align="center">
+                                <?php echo $value['nickname'] ?>
+                            </td>
+                            <td align="center">
+                                <?php echo $value['dep_name'] ?>
+                            </td>
+                            <td align="center">
+                                <?php echo $value['position_name']; ?>
+                            </td>
+                            <td align="center">
+                                <?php echo $value['tel']; ?>
+                            </td>
 
-                        <td align='center'>
-                            <a href="<?php echo site_url('employee/update/' . $value['emp_id']); ?>"><i class="fa fa-pencil-square-o fa-1x" id="font-field"></i></a>
-                        </td>
-                        <td align='center'>
-                            <a href="<?php echo site_url('employee/delete/' . $value['emp_id']); ?> " onclick = "JavaScript:return(confirm('คุณต้องการลบ--<?php echo $value['emp_fname']." ".$value['emp_lname']; ?>--จริงหรือไม่'));"><i class="fa fa-trash-o fa-1x" id="font-field"></i> </a> 
-                        </td>
-                    </tr>
+                            <td align='center'>
+                                <a href="<?php echo site_url('employee/update/' . $value['emp_id']); ?>"><i class="fa fa-pencil-square-o fa-1x" id="font-field"></i></a>
+                            </td>
+                            <td align='center'>
+                                <a href="<?php echo site_url('employee/delete/' . $value['emp_id']); ?> " onclick = "JavaScript:return(confirm('คุณต้องการลบ--<?php echo $value['emp_fname'] . " " . $value['emp_lname']; ?>--จริงหรือไม่'));"><i class="fa fa-trash-o fa-1x" id="font-field"></i> </a> 
+                            </td>
+                        </tr>
                     <?php } ?>
                 </tbody>
             </table>
@@ -178,3 +181,17 @@
         </div>
     </div>
 </div>
+
+<script>
+                                $(document).ready(function() {
+
+                                    $("#pt_id1").change(function() {
+                                        if ($("#pt_id1").val() != 3) {
+                                            $("#pt_id2").attr("disabled", "disabled");
+                                        } else {
+                                            $("pt_id2").removeAttr("disabled");
+                                        }
+                                    });
+
+                                });
+</script>

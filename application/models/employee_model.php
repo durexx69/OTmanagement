@@ -18,7 +18,12 @@ class Employee_model extends CI_Model {
                 " position p  ON emp.position_id = p.position_id ");
         return $rs->result_array();
     }
-
+    
+        public function get_leaderlist() {
+        $rs = $this->db->query(" SELECT * FROM employee WHERE position_id = 2 ");
+        return $rs->result_array();
+    }
+    
         public function get_position() {
         $pf = $this->db->query("Select * from position order by position_id asc");
         return $pf->result_array();
@@ -40,7 +45,8 @@ class Employee_model extends CI_Model {
                 "dep_id" => $this->input->post("dep_id"),
                 "position_id" => $this->input->post("position_id"),
                 "us" => $this->input->post("user"),
-                "passwd" => $this->input->post("passwd")              
+                "passwd" => $this->input->post("passwd"),
+                "leader_id" => $this->input->post("leader")
             );
             $this->db->insert('employee', $ar);
         }
@@ -61,7 +67,8 @@ class Employee_model extends CI_Model {
                 "dep_id" => $this->input->post("dep_id"),
                 "position_id" => $this->input->post("position_id"),
                 "us" => $this->input->post("user"),
-                "passwd" => $this->input->post("passwd")
+                "passwd" => $this->input->post("passwd"),
+                "leader_id" => $this->input->post("leader")
             );
             $this->db->where('emp_id', $id);
             $this->db->update("employee", $ar);

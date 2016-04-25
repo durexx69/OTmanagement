@@ -10,9 +10,9 @@ class managedata_overtime extends CI_Controller
         $this->load->model('Managedata_model');
     }
     
-    public function index($id){
+    public function index(){
         
-        $data['ot'] =  $this->Managedata_model->get_overtime($id);
+        $data['ot'] =  $this->Managedata_model->get_overtime();
         $data['md'] =  $this->Managedata_model->get_managedata();
         $this->load->view("managedata_overtime/managedata_overtime",$data);
     }

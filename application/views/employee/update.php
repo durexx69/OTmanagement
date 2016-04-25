@@ -67,7 +67,7 @@
                                     <tr class="odd gradeA">                                                                               
                                         <td align="left">
                                             ตำแหน่ง <text font="" style="color:#FF0000">*</text>
-                                            <select class="form-control" name="position_id" required="" autofocus="">
+                                            <select class="form-control" name="position_id" id="pt_id1" required="" autofocus="">
                                                 <?php foreach ($position as $key => $data) { ?>
                                                     <?php if ($emp['position_id'] == $data['position_id']) { ?>
                                                         <option selected="selected" value="<?php echo $data['position_id']; ?>"> <?php echo $data['position_name']; ?> </option>
@@ -86,7 +86,21 @@
                                             รหัสผ่าน <text font="" style="color:#FF0000">*</text>
                                             <input class="form-control numberonly" type="text" name="passwd" placeholder="กรอกรหัสผ่าน" required="" value="<?php echo $emp['passwd']; ?>">
                                         </td>
-                                    </tr>                                    
+                                    </tr>
+                                    <tr>
+                                        <td align="left">
+                                            หัวหน้างาน <text font="" style="color:#FF0000">*</text>
+                                            <select class="form-control" name="leader" id="pt_id2" required="" autofocus="">
+                                               <?php foreach ($leaderlist as $key => $data) { ?>
+                                                    <?php if ($emp['emp_id'] == $data['emp_id']) { ?>
+                                                        <option selected="selected" value="<?php echo $data['emp_id']; ?>"> <?php echo $data['emp_fname']." ".$data['emp_lname']; ?> </option>
+                                                    <?php }else{ ?>
+                                                        <option value="<?php echo $data['emp_id']; ?>"> <?php echo $data['emp_fname']." ".$data['emp_lname']; ?> </option>
+                                                    <?php } ?>
+                                                <?php } ?>
+                                            </select>
+                                        </td>                                     
+                                    </tr>
                                 </tbody>
                             </table>
 
@@ -107,3 +121,16 @@
         </div>
     </div>
 </div>
+<script>
+                                $(document).ready(function() {
+
+                                    $("#pt_id1").change(function() {
+                                        if ($("#pt_id1").val() != 3) {
+                                            $("#pt_id2").attr("disabled", "disabled");
+                                        } else {
+                                            $("pt_id2").removeAttr("disabled");
+                                        }
+                                    });
+
+                                });
+</script>

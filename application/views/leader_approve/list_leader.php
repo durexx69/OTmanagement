@@ -24,7 +24,7 @@
                 <div class="right_col" role="main">
                     <div class="">
 
-                        <?php $this->load->view('leader_approve/conten_list'); ?>
+                        <?php $this->load->view('leader_approve/content_list'); ?>
 
                         <?php $this->load->view('segment/footer_content'); ?>
                         <!-- /footer content -->

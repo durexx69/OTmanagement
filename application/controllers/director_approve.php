@@ -21,7 +21,15 @@ class director_approve extends CI_Controller {
         
         $data['issue'] = $this->Director_model->issueot($id);
         $data['list'] = $this->Director_model->list_data($id);
+        $data['issue_id'] = $id;
         $this->load->view("director_approve/list_director",$data);
+    }
+    
+    public function approve_ot($id){
+        
+        $data['approve'] = $this->Director_model->appove_ot($id);
+        
+        $this->load->view('director_approve',$data);
     }
 }
 

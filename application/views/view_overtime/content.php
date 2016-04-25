@@ -75,7 +75,7 @@
                                 <?php echo $key + 1; ?>
                             </td>
                             <td>
-                                <?php echo $value['monthly'] ?>
+                                <?php echo change_date($value['monthly']); ?>
                             </td> 
                             <td><a href="<?php echo site_url('managedata_overtime/index/'.$value['overtime_id'] ) ?>" class="btn btn-success btn-xs">จัดการข้อมูล โอ.ที.</a>                                                              </td>
                             </td>

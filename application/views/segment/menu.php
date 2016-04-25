@@ -20,10 +20,10 @@
                     </li>                    
                     <li><a href="<?php echo site_url('department/index') ?>"> จัดการข้อมูลแผนก </a>
                     </li>
-                    <li><a href="<?php echo site_url('position/index') ?>"> จัดการข้อมูลตำแหน่ง </a>                        
-                    </li>
-                    <li><a href="<?php echo site_url('manage_role/index') ?>"> จัดการบทบาท </a>
-                    </li>
+<!--                    <li><a href="<?php // echo site_url('position/index') ?>"> จัดการข้อมูลตำแหน่ง </a>                        
+                    </li>-->
+<!--                    <li><a href="<?php // echo site_url('manage_role/index') ?>"> จัดการบทบาท </a>
+                    </li>-->
                 </ul>
             </li>
         </ul>

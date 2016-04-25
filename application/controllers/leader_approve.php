@@ -21,7 +21,7 @@ class leader_approve extends CI_Controller {
 
         $data['issue'] = $this->Leader_model->issueot($id);
         $data['list'] = $this->Leader_model->list_data($id);
-        $this->load->view("director_approve/list_director", $data);
+        $this->load->view("leader_approve/list_leader", $data);
     }
 
 }
