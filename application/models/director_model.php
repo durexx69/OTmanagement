@@ -8,7 +8,8 @@ class Director_model extends CI_Model {
     }
 
     public function getdirector_appove() {
-        $rs = $this->db->query(" SELECT emp.emp_id,emp.emp_code,emp.emp_fname,emp.emp_lname,emp.nickname, dep.dep_id, dep.dep_name,emp.leader_id," .
+        $rs = $this->db->query(" SELECT emp.emp_id,emp.emp_code,emp.emp_fname,emp.emp_lname,emp.nickname, " .
+                " dep.dep_id, dep.dep_name,emp.leader_id," .
                 "ot.overtime_id,ot.monthly " .
                 "FROM employee emp " .
                 "INNER JOIN " .
@@ -53,7 +54,7 @@ class Director_model extends CI_Model {
     }
 
     public function cancel_ot($id) {
-        $this->db->update('overtime', array('status' => '2', 'approve_hr' => $_SESSION['emp_id']), array('overtime_id' => $id));
+        $this->db->update('overtime', array('status' => '2', 'approve_hr' => $_SESSION['emp_id'],'comment' => $this->input->post('comment')), array('overtime_id' => $id));
     }
 
 }

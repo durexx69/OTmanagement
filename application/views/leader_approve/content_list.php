@@ -30,7 +30,7 @@
                             </tr>                            
                         </thead>
                         <tbody> 
-                            <?php // print_r($list); ?>
+                            
                             <?php foreach ($issue as $key => $value) { ?>
                                 <tr class="odd pointer">
                                     <td align="center"><?php echo $key + 1; ?></td>                                
@@ -44,13 +44,27 @@
                         </table>
                         <div class="ln_solid"></div>
                         <div class="col-md-6 col-sm-6 col-xs-12 col-md-offset-3">
-                            <button type="submit" class="btn btn-success"><i class="fa fa-check"></i> อนุมัติ </button>                                                                                        
-                            <button type="submit" class="btn btn-danger"><i class="fa fa-check"></i> ยกเลิก </button>                                                                                        
-                            <button type="submit" class="btn btn-info"><i class="fa fa-check"></i> แก้ไข </button>                                                                                        
+                            <a class=" btn btn-success" href="<?php echo site_url('leader_approve/leader_ot/' . $issue_id); ?> " onclick = "JavaScript:return(confirm('คุณต้องการอนุมัติรายการนี้ใช่หรือไม่'));"><i  id="font-field"></i> อนุมัติ </a> 
+                            <a class=" btn btn-danger " href="<?php echo site_url('leader_approve/cancel_ot/' . $issue_id); ?> " onclick = "JavaScript:return(confirm('คุณต้องการลบรายการนี้จริงหรือไม่'));"><i  id="font-field"></i> ยกเลิก </a>                            
+                            
+                            <textarea name="comment" id="comment" class="form-control" rows="3" cols="50" required="" placeholder="กรุณาระบุคำอธิบาย...."></textarea>
+
+                            <button class=" btn btn-danger " id="hide" >ยกเลิก</button>
+                            <button class=" btn btn-danger " id="show" >show</button>
                         </div>
                 </form>
                 <!-- Modal -->
-
+                
+                                <script>
+                                $(document).ready(function() {
+                                    $("#hide").click(function() {
+                                        $("#comment").hide(500);
+                                    });
+                                    $("#show").click(function() {
+                                        $("#comment").show(500);
+                                    });
+                                });
+                </script>
             </div>
         </div>
     </div>

@@ -26,16 +26,17 @@ class director_approve extends CI_Controller {
     }
 
     public function approve_ot($id) {
-        
+
         $data['cancel'] = $this->Director_model->cancel_ot($id);
         $data['approve'] = $this->Director_model->appove_ot($id);
-        $this->load->view('director_approve/director_approve', $data);
+        $this->load->view('dashboard/view_dashboard', $data);
     }
-    
-        public function cancel_ot($id) {
-        
+
+    public function cancel_ot($id) {
+
         $data['cancel'] = $this->Director_model->cancel_ot($id);
-        $this->load->view('director_approve/director_approve', $data);
+        $this->load->view('dashboard/view_dashboard', $data);
     }
+
 }
 

@@ -8,13 +8,16 @@ class Leader_model extends CI_Model {
     }
 
     public function getleader_appove() {
-        $rs = $this->db->query(" SELECT * FROM employee " .
-                " INNER JOIN " .
-                " department " .
-                " ON " .
-                " employee.dep_id = department.dep_id " .
-                " INNER JOIN " .
-                " overtime ON overtime.emp_id = employee.emp_id ");
+        $rs = $this->db->query(" SELECT emp.emp_id,emp.emp_code,emp.emp_fname,emp.emp_lname,emp.nickname, " .
+                " dep.dep_id, dep.dep_name,emp.leader_id," .
+                "ot.overtime_id,ot.monthly " .
+                "FROM employee emp " .
+                "INNER JOIN " .
+                "department dep " .
+                "ON " .
+                "emp.dep_id = dep.dep_id " .
+                "INNER JOIN " .
+                "overtime ot ON ot.emp_id = emp.emp_id WHERE appove_leader = 0 ");
         return $rs->result_array();
     }
 
@@ -41,9 +44,17 @@ class Leader_model extends CI_Model {
                 "INNER JOIN " .
                 "issue_overtime " .
                 "ON " .
-                "overtime.overtime_id = issue_overtime.overtime_id ".
-                " WHERE overtime.emp_id =  '$id' ");
+                "overtime.overtime_id = issue_overtime.overtime_id " .
+                " WHERE overtime.overtime_id =  '$id' ");
         return $rs->result_array();
+    }
+
+    public function leader_ot($id) {
+        $this->db->update('overtime', array('status' => '1', 'appove_leader' => $_SESSION['emp_id']), array('overtime_id' => $id));
+    }
+
+    public function cancel_ot($id) {
+        $this->db->update('overtime', array('status' => '3', 'appove_leader' => $_SESSION['emp_id'], 'comment' => $this->input->post('comment')), array('overtime_id' => $id));
     }
 
 }

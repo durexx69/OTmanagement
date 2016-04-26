@@ -43,7 +43,7 @@
                                     <td><?php echo $value['emp_fname']." ". $value['emp_lname']; ?></td>
                                     <td><?php echo $value['dep_name']; ?></td>
                                     <td><?php echo change_date($value['monthly']); ?></td>
-                                    <td><a href="<?php echo site_url('leader_approve/listdata/'. $value['emp_id'] )   ?>" name="emp_id" class="btn btn-success btn-xs">ข้อมูล OT</a>
+                                    <td><a href="<?php echo site_url('leader_approve/listdata/'. $value['overtime_id'] )   ?>" name="emp_id" class="btn btn-success btn-xs">ข้อมูล OT</a>
                                     </td>
                                 </tr>
                                 <?php } ?>

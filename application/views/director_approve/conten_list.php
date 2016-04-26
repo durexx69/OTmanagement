@@ -47,44 +47,26 @@
                             <a class=" btn btn-success" href="<?php echo site_url('director_approve/approve_ot/' . $issue_id); ?> " onclick = "JavaScript:return(confirm('คุณต้องการอนุมัติรายการนี้ใช่หรือไม่'));"><i  id="font-field"></i> อนุมัติ </a> 
                             <a class=" btn btn-danger " href="<?php echo site_url('director_approve/cancel_ot/' . $issue_id); ?> " onclick = "JavaScript:return(confirm('คุณต้องการลบรายการนี้จริงหรือไม่'));"><i  id="font-field"></i> ยกเลิก </a>                            
 
+                            <textarea name="comment" id="comment" class="form-control" rows="3" cols="50" required="" placeholder="กรุณาระบุคำอธิบาย...."></textarea>
+
+                            <button class=" btn btn-danger " id="hide" >ยกเลิก</button>
+                            <button class=" btn btn-danger " id="show" >show</button>
                         </div>
 
                 </form>
 
+                <script>
+                                $(document).ready(function() {
+                                    $("#hide").click(function() {
+                                        $("#comment").hide(500);
+                                    });
+                                    $("#show").click(function() {
+                                        $("#comment").show(500);
+                                    });
+                                });
+                </script>                
+
                 <!-- Modal -->
-                <!--                <div class="modal fade" id="myModal" role="dialog">
-                                    <div class="modal-dialog modal-sm">
-                                        <div class="modal-content">
-                                            <div class="modal-header">
-                                                <button type="button" class="close" data-dismiss="modal">&times;</button>
-                                                <h4 class="modal-title">Modal Header</h4>
-                                            </div>
-                                            <div class="modal-body">
-                                                <p>เหตุผลในการยกเลิก : รายการนี้ไม่สามารถเบิก โอ.ที. ได้</p>
-                                            </div>
-                                            <div class="modal-footer">
-                                                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>-->
-                <!--                <div class="modal fade" id="edit" role="dialog">
-                                    <div class="modal-dialog modal-sm">
-                                        <div class="modal-content">
-                                            <div class="modal-header">
-                                                <button type="button" class="close" data-dismiss="modal">&times;</button>
-                                                <h4 class="modal-title">Modal Header</h4>
-                                            </div>
-                                            <div class="modal-body">
-                                                <p>เหตุผล : รายการนี้ลงเวลาไม่ถูกต้อง กรุณาแก้ไข</p>
-                                            </div>
-                                            <div class="modal-footer">
-                                                <a href="Edit_OT.php" class="btn btn-info"><i class="fa fa-edit"></i> แก้ไข </a>
-                                                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>-->
 
             </div>
         </div>
