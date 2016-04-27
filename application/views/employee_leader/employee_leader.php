@@ -24,8 +24,7 @@
                 <div class="right_col" role="main">
                     <div class="">
 
-                        <?php $this->load->view('leader_approve/conten_list'); ?>
-
+                        <?php $this->load->view('employee_leader/content'); ?>
                         <?php $this->load->view('segment/footer_content'); ?>
                         <!-- /footer content -->
                         <!-- /page content -->
@@ -44,7 +43,7 @@
         <?php $this->load->view('segment/js_import'); ?>
 
         <script>
-                    $(window).load(function () {
+            $(window).load(function () {
 
 
             });

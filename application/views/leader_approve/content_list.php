@@ -47,7 +47,7 @@
                             <a class=" btn btn-success" href="<?php echo site_url('leader_approve/leader_ot/' . $issue_id); ?> " onclick = "JavaScript:return(confirm('คุณต้องการอนุมัติรายการนี้ใช่หรือไม่'));"><i  id="font-field"></i> อนุมัติ </a> 
                             <a class=" btn btn-danger " href="<?php echo site_url('leader_approve/cancel_ot/' . $issue_id); ?> " onclick = "JavaScript:return(confirm('คุณต้องการลบรายการนี้จริงหรือไม่'));"><i  id="font-field"></i> ยกเลิก </a>                            
                             
-                            <textarea name="comment" id="comment" class="form-control" rows="3" cols="50" required="" placeholder="กรุณาระบุคำอธิบาย...."></textarea>
+                            <textarea name="comment" id="comment" class="form-control" rows="3" cols="50" required="" placeholder="กรณียกเลิกข้อมูล...."></textarea>
 
                             <button class=" btn btn-danger " id="hide" >ยกเลิก</button>
                             <button class=" btn btn-danger " id="show" >show</button>

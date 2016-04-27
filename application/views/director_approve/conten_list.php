@@ -45,16 +45,10 @@
 
                         <div class="col-md-6 col-sm-6 col-xs-12 col-md-offset-3">
                             <a class=" btn btn-success" href="<?php echo site_url('director_approve/approve_ot/' . $issue_id); ?> " onclick = "JavaScript:return(confirm('คุณต้องการอนุมัติรายการนี้ใช่หรือไม่'));"><i  id="font-field"></i> อนุมัติ </a> 
-                            <a class=" btn btn-danger " href="<?php echo site_url('director_approve/cancel_ot/' . $issue_id); ?> " onclick = "JavaScript:return(confirm('คุณต้องการลบรายการนี้จริงหรือไม่'));"><i  id="font-field"></i> ยกเลิก </a>                            
-
-                            <textarea name="comment" id="comment" class="form-control" rows="3" cols="50" required="" placeholder="กรุณาระบุคำอธิบาย...."></textarea>
-
-                            <button class=" btn btn-danger " id="hide" >ยกเลิก</button>
-                            <button class=" btn btn-danger " id="show" >show</button>
+                            <a class=" btn btn-danger " id="cancle-approve" href="javascript:void()" onclick = "JavaScript:return(confirm('คุณต้องการลบรายการนี้จริงหรือไม่'));"><i  id="font-field"></i> ยกเลิก </a>                            
+                            <textarea name="comment" id="comment" class="form-control" rows="3" cols="50" required="" placeholder="กรุณาใส่เหตุผลการยกเลิก...."></textarea>                            
                         </div>
-
                 </form>
-
                 <script>
                                 $(document).ready(function() {
                                     $("#hide").click(function() {
@@ -63,6 +57,18 @@
                                     $("#show").click(function() {
                                         $("#comment").show(500);
                                     });
+                                });
+                                $("#cancle-approve").click(function() {
+                                    if($('#comment').val() != ""){
+                                    $.post("<?php echo site_url('director_approve/cancel_ot/'); ?> ",
+                                            {issue_id: "<?php echo $issue_id ?>", comment: $('#comment').val()})
+                                            .done(function(data) {
+                                        alert("ยกเลิกสำเร็จแล้ว");
+                                        window.location.replace("<?php echo site_url('dashboard') ?>");
+                                    });
+                                    }else{
+                                        alert("กรุณาระบุเหตุผลการยกเลิก");
+                                    }
                                 });
                 </script>                
 
