@@ -16,16 +16,18 @@
             </div>
             <div class="x_content">
                 <br />
-                <?php echo form_open('managedata_overtime/update/' . $date['issue_id']) ?>
+                <?php echo form_open('managedata_overtime/update/' . $update['issue_id']) ?>
 
                 <table class="table table-bordered table-hover" id="dataTables-example"> 
                     <tbody>
-
+                        
                         <tr>
                             <td align="left">
-                                
+                                 <?php foreach ($ot as $value){ ?>
+                                <input type="hidden" name="overtime_id" value="<?php echo $value['overtime_id']; ?>"/>
+                                <?php } ?>
                                 ว/ด/ป ที่เริ่มทำ   
-                                <input type="datetime-local" class="form-control" id="request_date" name="start_date" value="<?php echo $date['start_date'] ?>" required="" autofocus="">
+                                <input type="datetime-local" class="form-control"  name="start_date" value="<?php echo $update['start_date'] ?>" required="" autofocus="">
                             </td>
 <!--                            <td align="left"> <br>
                                 <input type="checkbox" class="flat" id="checkbox" name="checkbox">
@@ -34,18 +36,18 @@
                             </td>-->
                             <td align="left" colspan="2"> 
                                 ว/ด/ป ที่สิ้นสุดการทำ
-                                <input type="datetime-local" class="form-control" id="end_date" name="end_date" value="<?php echo $date['end_date'] ?>" autofocus="">                                                                               
+                                <input type="datetime-local" class="form-control" name="end_date" value="<?php echo $update['end_date'] ?>" autofocus="">                                                                               
                             </td>
                         </tr>                                                                            
                         </tr>                            
                         <tr>
                             <td>
                                 งานที่ทำ
-                                <textarea name="work" class="form-control" rows="4" cols="50" required="" value="<?php echo $date['work'] ?>"></textarea>
+                                <textarea name="work" class="form-control" rows="4" cols="50" required="" value="<?php echo $update['work'] ?>"></textarea>
                             </td>
                             <td colspan="2">
                                 สถานที่ปัฎิบัติงาน
-                                <textarea name="location_work" class="form-control" rows="4" cols="50" required="" value="<?php echo $date['location_work'] ?>"></textarea>
+                                <textarea name="location_work" class="form-control" rows="4" cols="50" required="" value="<?php echo $update['location_work'] ?>"></textarea>
 
                             </td>
                         </tr>

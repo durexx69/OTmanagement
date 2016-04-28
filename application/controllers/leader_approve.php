@@ -27,15 +27,13 @@ class leader_approve extends CI_Controller {
 
     public function leader_ot($id) {
 
-        $data['cancel'] = $this->Leader_model->cancel_ot($id);
-        $data['leader'] = $this->Leader_model->leader_ot($id);
-        $this->load->view('dashboard/view_dashboard', $data);
+        $this->Leader_model->leader_ot($id);
+        redirect(site_url('dashboard'));
     }
 
-    public function cancel_ot($id) {
-
-        $data['cancel'] = $this->Leader_model->cancel_ot($id);
-        $this->load->view('dashboard/view_dashboard', $data);
+    public function cancel_ot() {
+       
+        echo  $this->Leader_model->cancel_ot();
     }
 
 }

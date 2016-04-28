@@ -75,10 +75,7 @@
                                         <tr>
                                             <th class="column-title" colspan="13"> ข้อมูลโอที [ทั่วไป] </th> 
                                         </tr>
-                                        <tr class="headings">
-                                            <th rowspan="2">
-                                                #
-                                            </th>
+                                        <tr class="headings">                                            
                                             <th class="column-title" rowspan="2">ลำดับ</th>                                            
                                             <th class="column-title" rowspan="2"> ว/ด/ป และ เวลา ที่เริ่ม </th>
                                             <th class="column-title" rowspan="2"> ว/ด/ป และ เวลา ที่สิ้นสุด </th>                                            
@@ -86,13 +83,11 @@
                                             <th class="column-title" rowspan="2"> จัดการ </th>
                                         </tr>                                        
                                     </thead>
-                                    <tbody>                        
+                                    <tbody>      
+                                        
                                         <tr class="odd pointer">
-                                            <?php foreach ($md as $key => $value) { ?>
-                                            <td class="a-center ">
-                                                <input type="checkbox" class="flat" name="table_records">
-                                            </td>
-                                            <td class="a-center ">
+                                            <?php foreach ($listdata as $key => $value) { ?>
+                                            <td align="center">
                                                 <?php echo $key + 1; ?>
                                             </td>                                           
                                             <td align="center">
@@ -106,8 +101,8 @@
                                             </td>
                                             
                                             <td align='center'>
-                                                <a href="<?php echo site_url('managedata_overtime/update/' . $value['issue_id']);   ?>"><i class="fa fa-pencil-square-o fa-1x" id="font-field"></i></a>
-                                                <a href="<?php echo site_url('managedata_overtime/delete/' . $value['issue_id']);   ?>" onclick="JavaScript:return(confirm('คุณต้องการลบ--<?php echo $value['work'] . " " . "และ" . " " . $value['location_work'] ?>--จริงหรือไม่'));"><i class="fa fa-trash-o fa-1x" id="font-field"></i> </a> 
+                                                <a href="<?php  echo site_url('managedata_overtime/update/' . $value['issue_id']);   ?>"><i class="fa fa-pencil-square-o fa-1x" id="font-field"></i></a>
+                                                <a href="<?php  echo site_url('managedata_overtime/delete/' . $value['issue_id']);   ?>" onclick="JavaScript:return(confirm('คุณต้องการลบ--<?php  echo $value['work'] . " " . "และ" . " " . $value['location_work'] ?>--จริงหรือไม่'));"><i class="fa fa-trash-o fa-1x" id="font-field"></i> </a> 
                                             </td>
 
                                         </tr>
@@ -122,11 +117,11 @@
                                 </tbody>
                             </form>
                             <div class="ln_solid"></div>
-                            <div class="form-group">
+<!--                            <div class="form-group">
                                 <div class="col-md-6 col-sm-6 col-xs-12 col-md-offset-3">
                                     <button type="submit" class="btn btn-success"><i class="fa fa-send-o"></i> ส่งข้อมูล </button>
                                 </div>
-                            </div>                           
+                            </div>                           -->
 
                         </div>
                     </div>

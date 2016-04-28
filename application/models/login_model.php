@@ -11,7 +11,7 @@ class Login_model extends CI_Model {
     }
 
     public function login($us, $passwd) {
-        $this->db->select('us,passwd,emp_id,emp_code,emp_fname,emp_lname');
+        $this->db->select('us,passwd,emp_id,emp_code,emp_fname,emp_lname,position_id');
         $this->db->from('employee');
         $this->db->where('us', $us);
         $this->db->where('passwd', $passwd);
@@ -40,6 +40,7 @@ class Login_model extends CI_Model {
             $this->session->set_userdata('emp_code', $employee[0]['emp_code']);
             $this->session->set_userdata('emp_fname', $employee[0]['emp_fname']);
             $this->session->set_userdata('emp_lname', $employee[0]['emp_lname']);
+            $this->session->set_userdata('position_id', $employee[0]['position_id']);
             $this->session->set_userdata('us', $employee[0]['us']);
             return 1;
         } else {

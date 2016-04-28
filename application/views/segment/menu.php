@@ -1,5 +1,5 @@
 <?php
-$menu = array(0, 0, 0, 0, 0, 0, 0);
+$menu = array(0, 0, 0, 0, 0, 0, 0, 0);
 
 if ($_SESSION['position_id'] == 1) {
     $menu = array(0, 0, 0, 0, 1, 1, 1, 0);
@@ -42,7 +42,7 @@ if ($_SESSION['position_id'] == 1) {
                 </li>
             <?php } ?>
 
-<!--            <li><a href="<?php // echo site_url('view_approve/index')      ?>"><i class="fa fa-file-text"></i> รายการ โอ.ที </a></li>-->
+<!--            <li><a href="<?php // echo site_url('view_approve/index')       ?>"><i class="fa fa-file-text"></i> รายการ โอ.ที </a></li>-->
             <?php if ($menu[3] == 1) { ?>
                 <li>
                     <a href="<?php echo site_url('leader_approve/index') ?>">
@@ -75,9 +75,9 @@ if ($_SESSION['position_id'] == 1) {
                                 จัดการข้อมูลแผนก 
                             </a>
                         </li>
-    <!--                    <li><a href="<?php // echo site_url('position/index')       ?>"> จัดการข้อมูลตำแหน่ง </a>                        
+    <!--                    <li><a href="<?php // echo site_url('position/index')        ?>"> จัดการข้อมูลตำแหน่ง </a>                        
                         </li>-->
-    <!--                    <li><a href="<?php // echo site_url('manage_role/index')       ?>"> จัดการบทบาท </a>
+    <!--                    <li><a href="<?php // echo site_url('manage_role/index')        ?>"> จัดการบทบาท </a>
                         </li>-->
                     </ul>
                 </li>

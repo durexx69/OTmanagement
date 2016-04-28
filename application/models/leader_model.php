@@ -17,7 +17,7 @@ class Leader_model extends CI_Model {
                 "ON " .
                 "emp.dep_id = dep.dep_id " .
                 "INNER JOIN " .
-                "overtime ot ON ot.emp_id = emp.emp_id WHERE appove_leader = 0 ");
+                "overtime ot ON ot.emp_id = emp.emp_id WHERE appove_leader = 0 AND approve_hr = 1 AND status <> 2 AND leader_id = ".$_SESSION['emp_id']);
         return $rs->result_array();
     }
 
@@ -53,8 +53,10 @@ class Leader_model extends CI_Model {
         $this->db->update('overtime', array('status' => '1', 'appove_leader' => $_SESSION['emp_id']), array('overtime_id' => $id));
     }
 
-    public function cancel_ot($id) {
-        $this->db->update('overtime', array('status' => '3', 'appove_leader' => $_SESSION['emp_id'], 'comment' => $this->input->post('comment')), array('overtime_id' => $id));
+    public function cancel_ot() {
+        $this->db->update('overtime', array('status' => '3', 'appove_leader' => $_SESSION['emp_id'],'comment' => $this->input->post('comment')), 
+                array('overtime_id' => $this->input->post('issue_id')));
+        return 1;
     }
 
 }

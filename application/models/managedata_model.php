@@ -9,7 +9,9 @@ class Managedata_model extends CI_Model {
 
     public function get_managedata() {
         $rs = $this->db->query(" SELECT * " .
-                " FROM overtime join issue_overtime on overtime.overtime_id = issue_overtime. overtime_id " .
+                " FROM overtime " .
+                " INNER JOIN issue_overtime " .
+                " ON overtime.overtime_id = issue_overtime. overtime_id " .
                 " WHERE emp_id =  " . $_SESSION['emp_id']);
         return $rs->result_array();
     }
@@ -18,7 +20,6 @@ class Managedata_model extends CI_Model {
         $rs = $this->db->query(" SELECT * FROM overtime ");
         return $rs->result_array();
     }
-    
 
     public function insert_managedata() {
         if ($this->input->post('ok') != null) {

@@ -53,8 +53,10 @@ class Director_model extends CI_Model {
         $this->db->update('overtime', array('status' => '1', 'approve_hr' => $_SESSION['emp_id']), array('overtime_id' => $id));
     }
 
-    public function cancel_ot($id) {
-        $this->db->update('overtime', array('status' => '2', 'approve_hr' => $_SESSION['emp_id'],'comment' => $this->input->post('comment')), array('overtime_id' => $id));
+    public function cancel_ot() {
+        $this->db->update('overtime', array('status' => '2', 'approve_hr' => $_SESSION['emp_id'],'comment' => $this->input->post('comment')), 
+                array('overtime_id' => $this->input->post('issue_id')));
+        return 1;
     }
 
 }
