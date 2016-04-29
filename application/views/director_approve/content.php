@@ -3,7 +3,7 @@
     <div class="col-lg-12">                           
         <ol class="breadcrumb">
             <li><i class="fa fa-dashboard fa-fw"></i><a href="<?php echo site_url('dashboard/index') ?>">Dashboard</a></li>
-            <li><i class="fa fa-thumbs-o-up"></i> อนุมัติ OT</li>
+            <li><i class="fa fa-user"></i> ฝ่ายบุคคล </li>
         </ol>
     </div>
 </div>
@@ -12,7 +12,7 @@
     <div class="col-md-12">
         <div class="x_panel">
             <div class="x_title">
-                <h2>อนุมัติ โอ.ที.</h2>
+                <h2>ฝ่ายบุคคล</h2>
 
                 <div class="clearfix"></div>
             </div>

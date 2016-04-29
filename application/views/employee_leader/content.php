@@ -2,7 +2,7 @@
     <div class="col-lg-12">                           
         <ol class="breadcrumb">
             <li><i class="fa fa-dashboard fa-fw"></i><a href="<?php echo site_url('dashboard/index') ?>">Dashboard</a></li>
-            <li><i class="fa fa-file-text"></i> รายการอนุมัติ</li>
+            <li><i class="fa fa-sitemap"></i> ผู้ใต้บังคับบัญชา</li>
         </ol>
     </div>
 </div>
@@ -12,7 +12,7 @@
     <div class="col-md-12">
         <div class="x_panel">
             <div class="x_title">
-                <h2>รายการ [อนุมัติ]</h2>
+                <h2>ผู้ใต้บังคับบัญชา</h2>
                 <div class="clearfix"></div>
             </div>
             <div class="x_content">

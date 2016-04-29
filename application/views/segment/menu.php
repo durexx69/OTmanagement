@@ -10,7 +10,7 @@ if ($_SESSION['position_id'] == 1) {
 }
 ?>
 <div class="navbar nav_title" style="border: 0;">
-    <a href="<?php echo site_url('dashboard/index') ?>" class="site_title"><span>Overtime R M S</span></a>
+    <a href="<?php echo site_url('dashboard/index') ?>" class="site_title"><i class="fa fa-clock-o fa-3"></i><span>Overtime R M S</span></a>
 </div>
 <div class="clearfix"></div>
 <br />
@@ -61,7 +61,7 @@ if ($_SESSION['position_id'] == 1) {
             <?php } ?>
             <?php if ($menu[5] == 1) { ?>
                 <li>
-                    <a href="<?php echo site_url('') ?>">
+                    <a href="<?php echo site_url('report') ?>">
                         <i class="fa fa-file-text">
                         </i> รายงานสรุป
                     </a>
@@ -93,7 +93,7 @@ if ($_SESSION['position_id'] == 1) {
             <?php if ($menu[7] == 1) { ?>
                 <li>
                     <a href="<?php echo site_url('employee_leader/index') ?>">
-                        <i class="fa fa-thumbs-o-up">
+                        <i class="fa fa-sitemap">
                         </i> ผู้ใต้บังคับบัญชา
                     </a>
                 </li>

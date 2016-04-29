@@ -4,7 +4,7 @@
     <div class="col-lg-12">                           
         <ol class="breadcrumb">
             <li><i class="fa fa-dashboard fa-fw"></i><a href="<?php echo site_url('dashboard/index') ?>">Dashboard</a></li>
-            <li><i class="fa fa-clock-o"></i> จัดการข้อมูล โอ.ที. </li>
+            <li><i class="fa fa-clock-o"></i> เพิ่มข้อมูล โอ.ที. </li>
         </ol>
     </div>
 </div>
@@ -14,7 +14,7 @@
     <div class="col-md-12">
         <div class="x_panel">
             <div class="x_title">
-                <h2>จัดการข้อมูล โอ.ที.</h2>
+                <h2>เพิ่มข้อมูล โอ.ที.</h2>
 
                 <div class="clearfix"></div>
             </div>
@@ -55,7 +55,6 @@
                 <table class="table table-striped responsive-utilities jambo_table bulk_action">
                     <thead>
                         <tr class="headings">
-                            <th class="column-title"> # </th>
                             <th class="column-title">ลำดับที่</th>
                             <th class="column-title"> ประจำเดือน </th>
                             <th class="column-title no-link last" align="center"><span class="nobr"> จัดการ </span></th>
@@ -68,9 +67,6 @@
                     <tbody>  
                         <?php foreach ($emp as $key => $value) { ?>
                         <tr class="odd pointer">
-                            <td class="a-center ">
-                                <input type="checkbox" class="flat" name="table_records">
-                            </td>
                             <td align="">
                                 <?php echo $key + 1; ?>
                             </td>
@@ -86,12 +82,7 @@
                 </table>
                 </form>
 
-                <div class="ln_solid"></div>
-                <div class="form-group">
-                    <div class="col-md-6 col-sm-6 col-xs-12 col-md-offset-3">
-                        <button type="submit" class="btn btn-success"><i class="fa fa-send-o"></i> รวมส่ง </button>                                                
-                    </div>
-                </div>
+                <div class="ln_solid"></div>               
 
             </div>
         </div>
