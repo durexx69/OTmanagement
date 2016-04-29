@@ -29,24 +29,24 @@ if ($_SESSION['position_id'] == 1) {
             <?php } ?>
             <?php if ($menu[1] == 1) { ?>
                 <li>
-                    <a href="<?php echo site_url('employee/update_private/') ?>">
-                        <i class="fa fa-user">                       
-                        </i> ประวัติพนักงาน </a>
+                    <a href="<?php echo site_url('view_overtime/index') ?>">
+                        <i class="fa fa-clock-o">                        
+                        </i> เพิ่มข้อมูล โอ.ที. </a>
                 </li>
             <?php } ?>
             <?php if ($menu[2] == 1) { ?>
                 <li>
-                    <a href="<?php echo site_url('view_overtime/index') ?>">
-                        <i class="fa fa-clock-o">                        
-                        </i> จัดการข้อมูล โอ.ที. </a>
-                </li>
+                    <a href="<?php echo site_url('comment_overtime/index') ?>">
+                        <i class="fa fa-file-text">                       
+                        </i> ผลการอนุมัติ โอ.ที </a>
+                </li>               
             <?php } ?>
 
 <!--            <li><a href="<?php // echo site_url('view_approve/index')       ?>"><i class="fa fa-file-text"></i> รายการ โอ.ที </a></li>-->
             <?php if ($menu[3] == 1) { ?>
                 <li>
                     <a href="<?php echo site_url('leader_approve/index') ?>">
-                        <i class="fa fa-share-square-o">
+                        <i class="fa fa-user">
                         </i> หัวหน้า 
                     </a>
                 </li>
@@ -54,12 +54,20 @@ if ($_SESSION['position_id'] == 1) {
             <?php if ($menu[4] == 1) { ?>
                 <li>
                     <a href="<?php echo site_url('director_approve/index') ?>">
-                        <i class="fa fa-thumbs-o-up">
-                        </i> ผู้อนุมัติ 
+                        <i class="fa fa-user">
+                        </i> ฝ่ายบุคคล 
                     </a>
                 </li>
             <?php } ?>
             <?php if ($menu[5] == 1) { ?>
+                <li>
+                    <a href="<?php echo site_url('') ?>">
+                        <i class="fa fa-file-text">
+                        </i> รายงานสรุป
+                    </a>
+                </li>
+            <?php } ?>
+            <?php if ($menu[6] == 1) { ?>
                 <li>
                     <a><i class="fa fa-cogs">                       
                         </i> จัดการข้อมูลพื้นฐาน <span class="fa fa-chevron-down">                       
@@ -80,15 +88,7 @@ if ($_SESSION['position_id'] == 1) {
     <!--                    <li><a href="<?php // echo site_url('manage_role/index')        ?>"> จัดการบทบาท </a>
                         </li>-->
                     </ul>
-                </li>
-            <?php } ?>
-            <?php if ($menu[6] == 1) { ?>
-                <li>
-                    <a href="<?php echo site_url('') ?>">
-                        <i class="fa fa-thumbs-o-up">
-                        </i> รายงานสรุป
-                    </a>
-                </li>
+                </li>               
             <?php } ?>
             <?php if ($menu[7] == 1) { ?>
                 <li>

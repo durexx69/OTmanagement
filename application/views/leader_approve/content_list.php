@@ -26,7 +26,7 @@
                                 <th class="column-title" rowspan="2">ลำดับ</th>                                            
                                 <th class="column-title" rowspan="2"> ว/ด/ป และ เวลา ที่เริ่ม </th>
                                 <th class="column-title" rowspan="2"> ว/ด/ป และ เวลา ที่สิ้นสุด </th>                                            
-                                <th class="column-title" rowspan="2"> งานที่ทำ/สถานที่ไป </th>
+                                <th class="column-title" rowspan="2"> งานที่ทำ/สถานปฎิบัติงาน </th>
                             </tr>                            
                         </thead>
                         <tbody> 

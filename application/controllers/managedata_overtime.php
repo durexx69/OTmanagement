@@ -12,19 +12,13 @@ class managedata_overtime extends CI_Controller {
     }
 
     public function index() {
-        
+
         $data['ot'] = $this->Managedata_model->get_overtime();
         $data['listdata'] = $this->Managedata_model->get_managedata();
-        $this->load->view("managedata_overtime/managedata_overtime",$data);
-    }    
-    
-//        public function listdata($id) {
-//        
-//        $data['list'] = $this->Managedata_model->get_managedata($id);
-//        $this->load->view("managedata_overtime/managedata_overtime",$data);
-//    } 
-    
-        public function delete($id) {
+        $this->load->view("managedata_overtime/managedata_overtime", $data);
+    }
+
+    public function delete($id) {
 
         $this->Managedata_model->delete_managedata($id);
         redirect(site_url('managedata_overtime'));
